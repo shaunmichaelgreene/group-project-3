@@ -1,0 +1,31 @@
+{
+  "name": "group-project-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "watch": "nodemon",
+    "seed": "node seeders/seeds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shaunmichaelgreene/group-project-3.git"
+  },
+  "keywords": [],
+  "dependencies": {
+    "bcrypt": "^4.0.1",
+    "express": "^4.17.1",
+    "faker": "^4.1.0",
+    "mongoose": "^5.9.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shaunmichaelgreene/group-project-3/issues"
+  },
+  "homepage": "https://github.com/shaunmichaelgreene/group-project-3#readme"
+}
