@@ -18,8 +18,8 @@ const typeDefs = gql`
     title: [String]
     description: String
     url: String
-    image: String
-    numberOfEpisodes: String
+    imageUrl: String
+    latestEpisodeDate: String
   }
 
   type Query {
