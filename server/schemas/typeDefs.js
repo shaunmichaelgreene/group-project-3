@@ -13,8 +13,6 @@ const typeDefs = gql`
 
   type Podcast {
     podcastId: ID!
-    # first: Int
-    # sort: {sortBy: FOLLOWER_COUNT, direction: DESCENDING}
     title: [String]
     description: String
     url: String

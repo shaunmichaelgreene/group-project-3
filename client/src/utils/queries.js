@@ -1,8 +1,19 @@
-import {gql} from '@apollo/client';
+import { gql } from "@apollo/client";
 
-
-export const SEARCH = gql`
-    query search($search: String!) {
-        search(search: $search)
+// all users
+export const GET_ME = gql`
+  {
+    me {
+      _id
+      username
+      email
+      savedPodcasts {
+        podcastId
+        image
+        description
+        title
+        link
+      }
     }
-`
+  }
+`;
