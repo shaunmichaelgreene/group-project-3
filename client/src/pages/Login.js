@@ -30,6 +30,7 @@ const Login = (props) => {
     } catch (e) {
       console.error(e);
     }
+
   };
 
   return (
@@ -69,4 +70,4 @@ const Login = (props) => {
   );
 };
 
-export default Login; 
+export default Login;
