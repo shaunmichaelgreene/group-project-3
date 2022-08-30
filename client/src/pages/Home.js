@@ -31,7 +31,7 @@ const Login = (props) => {
       console.error(e);
     }
   };
-
+  //modify return statement to say something like "Please Sign Up or Log In to begin searching!", and show the links instead of the input forms
   return (
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">

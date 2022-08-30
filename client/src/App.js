@@ -12,6 +12,7 @@ import Footer from "./components/Footer";
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Search from './pages/Search';
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -31,7 +32,7 @@ const client = new ApolloClient({
   link: httpLink,
   cache: new InMemoryCache(),
 });
-
+//add conditional rendering to this return statememt to trigger redirect to homepage if not logged in
 function App() {
   return (
     <ApolloProvider client={client}>
@@ -52,6 +53,10 @@ function App() {
                 <Route 
                   path="/signup" 
                   element={<Signup />} 
+                />
+                <Route 
+                  path="/search" 
+                  element={<Search />} 
                 />
             </Routes>
           </div>
