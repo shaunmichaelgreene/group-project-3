@@ -22,6 +22,8 @@ const resolvers = {
     user: async (parent, { username }) => {
       return User.findOne({ username }).select("-__v -password");
     },
+    //search for a podcast by term
+    
   },
 
   Mutation: {

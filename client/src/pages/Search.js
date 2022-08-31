@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+
 import { useQuery } from '@apollo/client';
 import { SEARCH } from '../utils/queries';
 import Auth from '../utils/auth';
+import { getPodcastsBySearchTerm } from '../utils/API';
 
 const Search = (props) => {
 
@@ -23,7 +25,8 @@ const Search = (props) => {
       event.preventDefault();
     
       try {
-        //fetch or search function
+        getPodcastsBySearchTerm(formState.searchInput);
+        console.log(formState.searchInput)
       
       } catch (e) {
         console.error(e);
