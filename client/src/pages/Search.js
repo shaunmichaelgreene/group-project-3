@@ -31,7 +31,6 @@ const Search = (props) => {
             if (response.ok) { //if call is successful...
                 // console.log(response.json());
                 response.json().then(function(data) { //convert response to json
-                // let searchResult = JSON.parse(localStorage.getItem ("searchResult")); //check localStorage to see if data already exists - OK TO DELETE?
                 
                 //temporary logic to check if search result exists in local storage or not
                 
