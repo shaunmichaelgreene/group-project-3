@@ -11,13 +11,18 @@ main {
 }
 
 body {
+  background-image: url("assets/pexels-laura-the-explaura-3608263.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 10%;
+  background-size: cover;
   margin: 0;
   padding: 0;
   font-weight: 600;
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: 0.1em;
-  background: var(--dark);
+  /* background: var(--dark); */
   color: var(--light);
   font-family: "Arial", cursive;
 }
