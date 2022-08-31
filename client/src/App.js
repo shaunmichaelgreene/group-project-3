@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ApolloProvider,
   ApolloClient,
@@ -13,6 +13,9 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import Search from "./pages/Search";
+
+import Modal from "./components/Modal/Modal.js";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -33,8 +36,11 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+import styles from "./App.module.css";
+
 //add conditional rendering to this return statement to trigger redirect to homepage if not logged in
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   return (
     <ApolloProvider client={client}>
       <Router>
@@ -49,6 +55,24 @@ function App() {
               <Route path="/search" element={<Search />} />
             </Routes>
           </div>
+          
+          <div>
+            <button
+              className={styles.primaryBtn}
+              onClick={() => setIsOpen(true)}
+            >
+              Open Modal
+            </button>
+            {isOpen && <Modal setIsOpen={setIsOpen} />}
+          </div>
+          {/* <Modal show={this.state.show}>Message in Modal</Modal>
+          <button onClink={e =>{
+            this.showModal( state = { show:false },
+            showModal = e => {
+              this.setState({ show: true });
+            });
+          }} >show Modal</button> */}
+
           <Footer />
         </div>
       </Router>
