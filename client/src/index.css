@@ -7,7 +7,7 @@ main {
 
 :root {
   --dark: #1a5ccf;
-  --light: #e9ef22;
+  /* --light: #e9ef22; */
 }
 
 body {
@@ -82,3 +82,4 @@ code {
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
+

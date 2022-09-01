@@ -15,6 +15,7 @@ import Search from "./pages/Search";
 import styles from "./App.module.css";
 import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
+import NoMatch from "./pages/NoMatch";
 
 // const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
 
@@ -51,6 +52,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/search" element={<Search />} />
+          <Route path="*" element={<NoMatch />} />
         </Routes>
 
         <div>
@@ -58,7 +60,7 @@ function App() {
             Open Modal
           </button>
           {isOpen && <Modal setIsOpen={setIsOpen} />}
-          </div>
+        </div>
         <Footer />
       </Router>
     </ApolloProvider>
