@@ -5,12 +5,12 @@ const NoMatch = () => {
   return (
     <div>
       <h4>Oops, we couldn't find that pawdcast</h4>
-      <img
+      {/* <img
         src={Photo}
         style={{ width: "60%" }}
         alt="404 sign"
         className="cat404"
-      ></img>
+      ></img> */}
     </div>
   );
 };
