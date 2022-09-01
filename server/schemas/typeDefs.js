@@ -12,6 +12,7 @@ const typeDefs = gql`
   }
 
   type Podcast {
+    _id: ID
     podcastId: ID!
     title: [String]
     description: String
