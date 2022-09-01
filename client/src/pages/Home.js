@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { useMutation } from "@apollo/client";
-import { LOGIN_USER } from "../utils/mutations";
+import { useQuery, useMutation } from "@apollo/client";
+// import { LOGIN_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-import Footer from "../components/Footer";
-import Header from "../components/Nav";
+
+const loggedIn = Auth.loggedIn();
 
 const Home = () => {
   //modify return statement to say something like "Please Sign Up or Log In to begin searching!", and show the links instead of the input forms
@@ -11,10 +11,10 @@ const Home = () => {
     <main className="flex-row justify-center mb-4">
       <div className="col-12 col-md-6">
         <div className="card">
+          {loggedIn && <div className="col-12 mb-3"></div>}
           HOME PAGE
         </div>
       </div>
-      
     </main>
   );
 };
