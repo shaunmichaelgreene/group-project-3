@@ -14,6 +14,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Search from './pages/Search';
 
+// const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
+
+// console.log(REACT_APP_API_KEY)
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });

@@ -39,8 +39,8 @@ const Search = (props) => {
                     let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
                     localStorage.setItem("searchResult", JSON.stringify(searchResult));
                 } else { //if localStorage does already contain the data, fetch from local storage
+                    let searchResult = JSON.parse(localStorage.getItem("searchResult"));
                     console.log(searchResult)
-                    searchResult = JSON.parse(localStorage.getItem("searchResult"));
                     //will likely break this up into a separate helper function, just making sure the call logic is working. 
                 }
                 })

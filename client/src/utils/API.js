@@ -1,4 +1,5 @@
-const podchaserToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI5NzI0NjlhNi1kMDA5LTRhMzItYjkzZi1hMzkwNTdhOGFmOGMiLCJqdGkiOiIyM2JmNmM5NzQ2ODI4ZDJiMDQ4YzUyYjAyYTAwODdiNzY0NmFlZGQ1MjNlMGUzNWM2OTJmYjQ1MDcxNGNiZDE0MzU3NzJkZGZkNWQzOGE0NSIsImlhdCI6MTY2MTkwNTE0Ny43NzU0NzEsIm5iZiI6MTY2MTkwNTE0Ny43NzU0NzQsImV4cCI6MTY5MzQ0MTE0Ny43NjEzNzksInN1YiI6IiIsInNjb3BlcyI6WyIqIl19.p_6DO0d4bHed1lPeumBVdTUDhpO5RzhY6A5UizgzEcr1LB85S-OolpI6Od7ZApah4GxVYhjQWoXkhAZoAsRXblLuZx4Q0MTWmT8iXSvJfuru67bfJVczAbnD2vp1y2uboR0sVP_xZyUCKiRnrzBKuM0qxyYYieBdEjFnHTljvZsbbOCiXmNhvlRkdNhBkxbisn6ufmGvSdAH4NJm726WnMXq9cx6sB_enSXGIWXRyei3e_oexWoVzkuxVJsnGaSJ6IpKQ8SDANJAx0xkSb-flEu0cTXB_HOqV2nNAHsvysWAlACtW7mq92Qqr0q5jbnhTV6cmzneYIRIQUW4pGWO_cnAcgfZ0i9Qh4B3AzPQXeeJm9IQv4JiffxLJiJmnBYfa6UDR26gJE7n7G_FL9wUTK5UXn73xk3m_8-lTa1vCLxfo7haXQ6vWkDwtmIYN4GHugqlMpV49Z_gtLY0hc_-XP0b-PxO896-OL_rJpTyHMBbYzHbenAWH2xZHUiRfT1mwRdTrI8JSbhPfVPuWB9rq3j-xFd3Udrq_8b7iWsF8S_knAS-Gxe0NmyQzPJOj-mB3ji1mKWy9mkTqbuLOsapEceoH84Rca7BgCqjxAub2_qt9A6MvYOeQ0zAtQSFtQh1iDod4MrcO4WGm_eeEjBpWqZFg0YglPNqSTFe8pkMvT0"
+const podchaserToken = `${process.env.REACT_APP_API_KEY}`
+// console.log (podchaserToken)
 
 //NEW PODCAST QUERIES (PODCHASER)
 export const getPodcastsBySearchTerm = (searchTerm) => {
@@ -28,7 +29,6 @@ export const getPodcastsBySearchTerm = (searchTerm) => {
         }`
     })
 }
-
 
 
 // route to get logged in user's info (needs the token)
