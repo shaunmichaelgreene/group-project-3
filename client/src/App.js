@@ -56,13 +56,6 @@ function App() {
           {isOpen && <Modal setIsOpen={setIsOpen} />}
           <Footer />
         </div>
-        {/* <Modal show={this.state.show}>Message in Modal</Modal>
-          <button onClink={e =>{
-            this.showModal( state = { show:false },
-            showModal = e => {
-              this.setState({ show: true });
-            });
-          }} >show Modal</button> */}
       </Router>
     </ApolloProvider>
   );
