@@ -1,4 +1,8 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { useQuery } from '@apollo/client';
+import { SEARCH } from '../utils/queries';
+import Auth from '../utils/auth';
+import PodcastCard from '../components/Cards/cards';
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
@@ -75,6 +79,9 @@ const Search = (props) => {
               </button>
             </form>
           </div>
+        </div>
+        <div className="podcasts">
+          <PodcastCard />
         </div>
       </div>
     </main>
