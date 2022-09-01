@@ -10,7 +10,7 @@ const NoMatch = () => {
         style={{ width: "60%" }}
         alt="404 sign"
         className="cat404"
-      ></img> */
+      ></img> */}
     </div>
   );
 };
