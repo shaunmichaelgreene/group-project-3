@@ -16,6 +16,10 @@ import styles from "./App.module.css";
 import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
 
+// const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
+
+// console.log(REACT_APP_API_KEY)
+
 const httpLink = createHttpLink({
   uri: "/graphql",
 });
