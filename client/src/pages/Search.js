@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
 import { SEARCH } from '../utils/queries';
 import Auth from '../utils/auth';
+import PodcastCard from '../components/Cards/cards';
 
 const Search = (props) => {
 
@@ -47,12 +48,14 @@ const Search = (props) => {
                 value={formState.searchInput}
                 onChange={handleChange}
                 />
-              
               <button className="btn d-block w-100" type="submit">
                 Search!
               </button>
             </form>
           </div>
+        </div>
+        <div className="podcasts">
+          <PodcastCard />
         </div>
       </div>
     </main>
