@@ -46,6 +46,9 @@ const Search = (props) => {
               } else {
                 //if localStorage does already contain the data, fetch from local storage
                 console.log(searchResult);
+                let searchResult = JSON.parse(localStorage.getItem("searchResult"));
+                //will likely break this up into a separate helper function, just making sure the call logic is working.
+              }
             });
           }
         });
