@@ -5,10 +5,10 @@ import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">Home</Link>
+      <div className="nav container flex-row justify-space-between-lg justify-center align-center">
+        <Link to="/"><img src="https://see.fontimg.com/api/renderfont4/Yyj/eyJyIjoiZnMiLCJoIjoxMTQsInciOjEyNTAsImZzIjo5MSwiZmdjIjoiI0U4RTYyNCIsImJnYyI6IiMwNDA0MDQifQ/UGF3ZWQtQ2FzdGVy/catty.png" alt="Paws fonts"></img></Link>
 
-        <nav className="text-center">
+        <nav className="logged-in text-center">
           {Auth.loggedIn() ? (
             <>
               <Link to="/search">Search</Link>
