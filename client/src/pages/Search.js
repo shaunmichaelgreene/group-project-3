@@ -82,7 +82,7 @@ const Search = (props) => {
           </div>
         </div>
         <div className="podcasts">
-          <PodcastCard />
+          {/* <PodcastCard /> */}
         </div>
       </div>
     </main>
