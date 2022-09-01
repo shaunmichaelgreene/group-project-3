@@ -33,3 +33,27 @@ export const QUERY_ME_BASIC = gql`
     }
   }
 `;
+
+// all podcasts
+export const QUERY_PODCASTS = gql`
+  query podcasts($username: String) {
+    podcasts(username: $username) {
+      _id
+      podcastText
+      createdAt
+      username
+    }
+  }
+`;
+
+// one podcast
+export const QUERY_PODCAST = gql`
+  query QUERY_PODCAST($id: ID!) {
+    QUERY_PODCAST(_id: $id) {
+      _id
+      QUERY_PODCASTText
+      createdAt
+      username
+    }
+  }
+`;
