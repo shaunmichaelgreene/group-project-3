@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { SEARCH } from '../utils/queries';
-import Auth from '../utils/auth';
-import PodcastCard from '../components/Cards/cards';
+// import PodcastCard from '../components/Cards/cards';
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
