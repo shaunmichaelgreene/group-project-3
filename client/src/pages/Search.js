@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";

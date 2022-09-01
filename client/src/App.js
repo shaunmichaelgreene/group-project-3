@@ -54,8 +54,8 @@ function App() {
             Open Modal
           </button>
           {isOpen && <Modal setIsOpen={setIsOpen} />}
-          <Footer />
-        </div>
+          </div>
+        <Footer />
       </Router>
     </ApolloProvider>
   );
