@@ -9,10 +9,10 @@ export const QUERY_ME = gql`
       email
       savedPodcasts {
         podcastId
-        image
+        # image
         description
         title
-        link
+        # link
       }
     }
   }
@@ -29,6 +29,19 @@ export const QUERY_ME_BASIC = gql`
       podcasts {
         _id
         title
+      }
+    }
+  }
+`;
+
+export const QUERY_USER = gql`
+  query user($username: String!) {
+    user(username: $username) {
+      _id
+      username
+      email
+      podcasts {
+        _id
       }
     }
   }

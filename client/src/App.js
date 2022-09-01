@@ -16,6 +16,7 @@ import styles from "./App.module.css";
 import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
 import NoMatch from "./pages/NoMatch";
+import Profile from "./pages/Profile";
 
 // const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
 
@@ -49,6 +50,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/search" element={<Search />} />
