@@ -15,12 +15,12 @@ const Home = () => {
       <h1>Pawed-Casts</h1>
       <div className="col-12 col-md-6">
         <div className="card">HOME PAGE</div>
-        <img
+        {/* <img
         src={Panda}
         style={{ width: "60%" }}
         alt="404 sign"
         className="cat404"
-      ></img>
+      ></img> */}
       </div>
     </main>
   );

@@ -7,11 +7,11 @@ main {
 
 :root {
   --dark: #1a5ccf;
-  --light: #e9ef22;
+  /* --light: #e9ef22; */
 }
 
 body {
-  /* background-image: url("assets/pexels-laura-the-explaura-3608263.jpg"); */
+  background-image: url("assets/pexels-laura-the-explaura-3608263.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 10%;
