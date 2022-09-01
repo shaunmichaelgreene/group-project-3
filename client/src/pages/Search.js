@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import PodcastCard from '../components/Cards/cards';
 
 import { useQuery } from "@apollo/client";
@@ -21,38 +21,42 @@ const Search = (props) => {
     });
   };
 
-    // submit form
-    const handleFormSubmit = async (event) => {
-      event.preventDefault();
+  // submit form
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     //   let searchResult = [];
-    
-      try {
-        getPodcastsBySearchTerm(formState.searchInput) //api call with search term
-        .then(function(response) {
-            if (response.ok) { //if call is successful...
-                // console.log(response.json());
-                response.json().then(function(data) { //convert response to json
-                
-                //temporary logic to check if search result exists in local storage or not
-                
-                if (localStorage.getItem("searchResult") === null) { 
-                    let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-                    localStorage.setItem("searchResult", JSON.stringify(searchResult));
-                } else { //if localStorage does already contain the data, fetch from local storage
-                    console.log(searchResult)
-                    searchResult = JSON.parse(localStorage.getItem("searchResult"));
-                    //will likely break this up into a separate helper function, just making sure the call logic is working. 
-                }
-                })
-            }
-        })
-        console.log(formState.searchInput)
-      
-      } catch (e) {
-        console.error(e);
-      }
-    
-    };
+
+    try {
+      getPodcastsBySearchTerm(formState.searchInput) //api call with search term
+        .then(function (response) {
+          if (response.ok) {
+            //if call is successful...
+            // console.log(response.json());
+            response.json().then(function (data) {
+              //convert response to json
+
+              //temporary logic to check if search result exists in local storage or not
+
+              if (localStorage.getItem("searchResult") === null) {
+                let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
+                localStorage.setItem(
+                  "searchResult",
+                  JSON.stringify(searchResult)
+                );
+              } else {
+                //if localStorage does already contain the data, fetch from local storage
+                console.log(searchResult);
+                searchResult = JSON.parse(localStorage.getItem("searchResult"));
+                //will likely break this up into a separate helper function, just making sure the call logic is working.
+              }
+            });
+          }
+        });
+      console.log(formState.searchInput);
+    } catch (e) {
+      console.error(e);
+    }
+  };
 
   return (
     <main className="flex-row justify-center mb-4">
