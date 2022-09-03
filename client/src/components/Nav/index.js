@@ -1,25 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
+import { SiDatabricks } from "react-icons/si";
+import { FaBars, FaTimes } from "react-icons/fa";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import "./NavStyles.css";
 
 const Nav = () => {
-  return (
-    <header className="bg-secondary mb-4 py-2 flex-row align-center">
-      <div className="nav container flex-row justify-space-between-lg justify-center align-center">
-        <Link to="/">
-          <img
-            src="https://see.fontimg.com/api/renderfont4/Yyj/eyJyIjoiZnMiLCJoIjoxMTQsInciOjEyNTAsImZzIjo5MSwiZmdjIjoiI0U4RTYyNCIsImJnYyI6IiMwNDA0MDQifQ/UGF3ZWQtQ2FzdGVy/catty.png"
-            alt="Paws fonts"
-          ></img>
-        </Link>
+  const [nav, setNav] = useState(false);
+  const handleNav = () => setNav(!nav);
 
-        <nav className="logged-in text-center">
+  return (
+    <div name="top" className="navbar">
+      <div className="container">
+        <ul className={nav ? "nav-menu active" : "nav-menu"}>
           {Auth.loggedIn() ? (
             <>
-              <Link to="/profile">Profile</Link>
-              <Link to="/search">Search</Link>
+              <Link to="/">
+                <li>Home</li>
+              </Link>
+              <Link to="/profile">
+                <li>Profile</li>
+              </Link>
+              <Link to="/search">
+                <li>Search</li>
+              </Link>
+
               <a href="/" onClick={logout}>
-                Logout
+                <li>Logout</li>
               </a>
             </>
           ) : (
@@ -27,9 +34,13 @@ const Nav = () => {
               <Link to="/login">Login</Link>
             </>
           )}
-        </nav>
+        </ul>
+        <div className="hamburger" onClick={handleNav}>
+          {!nav ? <FaBars className="icon" /> : <FaTimes className="icon" />}
+        </div>
+        <div className="logo"></div>
       </div>
-    </header>
+    </div>
   );
 };
 

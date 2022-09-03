@@ -101,8 +101,7 @@ const Search = (props) => {
   const getLocalStorage = () => {
     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
   };
-  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult")).data
-    .podcasts.data;
+  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"))
   getLocalStorage();
 
   return (
