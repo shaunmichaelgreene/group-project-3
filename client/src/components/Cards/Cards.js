@@ -1,17 +1,16 @@
 import React from 'react';
 
-const PodcastCard = ({ title, imageURL, numberOfEpisodes, url }) => {
-  
+const PodcastCard = (props) => {
   return (
-    <div className = "podcast-card">
+    <div className = "podcast-card" >
       <div className="image-container">
-        <a href={imageURL} alt={title} className="podcast-img"></a>
+        <a href={props.imageURL} alt="null" className="podcast-img" ></a>
       </div>
-      <div className="project-item-details">
-        <h2 className="podcast-url">
-          <a href={url}>{title}</a>
+      <div className="podcast-item-details">
+        <h2 className="podcast-url" >
+          <a href={props.url} key={props.url}>{props.title}</a>
         </h2>
-        <p className="Number-of-episodes">{numberOfEpisodes}</p>
+        <p className="Number-of-episodes" key={props.numberOfEpisodes}>{props.numberOfEpisodes} </p>
       </div>
     </div>
   );

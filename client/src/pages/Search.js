@@ -6,6 +6,8 @@ import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";
 import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
+import PodcastCard from "../components/Cards/Cards";
+import { RiSdCardFill } from "react-icons/ri";
 
 const Search = (props) => {
   const [formState, setFormState] = useState({ search: "" });
@@ -46,7 +48,7 @@ const Search = (props) => {
               } else {
                 //if localStorage does already contain the data, fetch from local storage
                 console.log(searchResult);
-                searchResult = JSON.parse(localStorage.getItem("searchResult"));
+
                 //will likely break this up into a separate helper function, just making sure the call logic is working.
               }
             });
@@ -57,6 +59,13 @@ const Search = (props) => {
       console.error(e);
     }
   };
+
+  const getLocalStorage = () => {
+    localStorage.getItem("searchResult", JSON.stringify("searchResult"));
+  };
+  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult")).data
+    .podcasts.data;
+  getLocalStorage();
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -80,9 +89,10 @@ const Search = (props) => {
               </button>
             </form>
           </div>
-        </div>
-        <div className="podcasts">
-          {/* <PodcastCard /> */}
+          <div className="container"></div>
+          {savedPodcasts.map((savePodcast) => (
+            <PodcastCard key={savePodcast.id} podcast="podcast" />
+          ))}
         </div>
       </div>
     </main>
