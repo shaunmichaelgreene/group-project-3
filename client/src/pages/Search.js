@@ -128,7 +128,7 @@ const Search = (props) => {
             </form>
           </div>
           <h4>Or choose from one of our popular categories!</h4>
-          <div className="search-btn-container">
+          {/* <div className="search-btn-container">
             <button onClick={(e) => buttonSearch(e.target.textContent)}>
               Dogs
             </button>
@@ -145,15 +145,21 @@ const Search = (props) => {
               Dragons
             </button>
           </div>
+        </div> */}
+        </div>
+        <div>
+
         </div>
 
-                <div className="container"></div>
+               {/* <div className="container"></div>
                     {savedPodcasts.map(savedPodcast => (
                     <PodcastCard key={savedPodcast.id} podcast="podcast" />
                     ))}
-                </div>
-            
-        </main>
+                    </div> */}
+            <div>
+        </div> 
+        </div>
+     </main>
     );
 };
 
