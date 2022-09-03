@@ -4,10 +4,14 @@ const { ApolloServer } = require("apollo-server-express");
 // import middleware
 const { authMiddleware } = require("./utils/auth");
 const path = require("path");
-
+// added for .env
+const dotenv = require("dotenv");
 // import our typeDefs and resolvers
 const { typeDefs, resolvers } = require("./schemas");
 const db = require("./config/connection");
+
+// added for .env
+dotenv.config(`${process.env.SECRET_KEY}`);
 
 const PORT = process.env.PORT || 3001;
 // create a new Apollo server and pass in our schema data

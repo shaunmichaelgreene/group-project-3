@@ -52,7 +52,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
           <Route path="/search" element={<Search />} />
           <Route path="*" element={<NoMatch />} />
         </Routes>
