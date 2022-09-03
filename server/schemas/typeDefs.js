@@ -7,11 +7,13 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    password: String
     podcastCount: Int
     savedPodcasts: [Podcast]
   }
 
   type Podcast {
+    _id: ID
     podcastId: ID!
     title: [String]
     description: String

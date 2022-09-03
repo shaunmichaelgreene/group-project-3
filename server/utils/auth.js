@@ -3,7 +3,7 @@ require("dotenv").config();
 
 // set token secret and expiration date
 const secret = process.env.secret;
-const expiration = "1000h";
+const expiration = "24h";
 
 module.exports = {
   // function for our authenticated routes

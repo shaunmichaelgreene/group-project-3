@@ -7,7 +7,7 @@ main {
 
 :root {
   --dark: #1a5ccf;
-  --light: #e9ef22;
+  /* --light: #e9ef22; */
 }
 
 body {
@@ -27,8 +27,28 @@ body {
   font-family: "Arial", cursive;
 }
 
-.header a {
+.nav a {
   color: #e9ef22;
+  padding: 0 2%;
+}
+
+.nav img {
+  border: solid black 16px;
+  border-radius: 25px;
+}
+
+.logged-in a {
+  padding: 0 10%;
+}
+
+.nav {
+  display: flex;
+  padding: 2%;
+}
+
+.search-btn-container {
+  display: flex;
+  justify-content:space-between;
 }
 
 /* body {
@@ -67,3 +87,4 @@ code {
   border: 2px solid var(--dark);
   border-radius: var(--border-radius);
 }
+
