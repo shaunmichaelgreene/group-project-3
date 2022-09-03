@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import PodcastCard from '../components/Cards/cards';
+import PodcastCard from '../components/Cards/Cards';
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
@@ -74,6 +74,10 @@ const Search = (props) => {
                             } else {
                                 let searchResult = JSON.parse(localStorage.getItem("searchResult"));
                                     console.log(searchResult);
+                                    console.log(searchResult.data.podcasts.data[0].title)
+                                    console.log(searchResult.data.podcasts.data[0].imageUrl)
+                                    console.log(searchResult.data.podcasts.data[0].numberOfEpisodes)
+                                    console.log(searchResult.data.podcasts.data[0].url)
                             }
                         });
                     }
@@ -136,7 +140,10 @@ const Search = (props) => {
                         </button>
                     </div>
                 </div>
-                <div className="podcasts">{/* <PodcastCard /> */}</div>
+
+                <div className="podcasts"><PodcastCard />
+                    {/* <p>{searchResult.data.podcasts.data[0].title}</p> */}
+                </div>
             </div>
         </main>
     );
