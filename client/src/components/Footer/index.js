@@ -10,7 +10,6 @@ import {
   FiDribbble,
 } from "react-icons/fi";
 import "./FooterStyles.css";
-
 import { Link } from "react-scroll";
 
 const Footer = () => {
@@ -32,8 +31,8 @@ const Footer = () => {
           <div className="col">
             <h3>Navigation</h3>
             <p>Home</p>
-            <p>Data</p>
-            <p>Cloud</p>
+            <p>Profile</p>
+            <p>Search</p>
             <p>Contact</p>
           </div>
           <div className="col">

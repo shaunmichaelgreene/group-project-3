@@ -3,8 +3,6 @@ import { useQuery, useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 
-import Panda from "../assets/pexels-laura-the-explaura-3608263.jpg";
-
 const loggedIn = Auth.loggedIn();
 
 const Home = () => {
