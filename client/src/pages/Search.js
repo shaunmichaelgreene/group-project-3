@@ -151,8 +151,8 @@ const Search = (props) => {
                 </div>
 
                 <div className="container"></div>
-                    {savedPodcasts.map((savePodcast) => (
-                    <PodcastCard key={savePodcast.id} podcast="podcast" />
+                    {savedPodcasts.map(savedPodcast => (
+                    <PodcastCard key={savedPodcast.id} podcast="podcast" />
                     ))}
                 </div>
             

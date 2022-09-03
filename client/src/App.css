@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -31,6 +32,11 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.podcast-card {
+  width: 200px;
+  height: 200px;
 }
 
 @keyframes App-logo-spin {
