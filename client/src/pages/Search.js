@@ -1,11 +1,13 @@
 import React, { useState } from "react";
-import PodcastCard from '../components/Cards/Cards';
+// import PodcastCard from '../components/Cards/Cards';
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";
 import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
+
+const renderArray = []
 
 const Search = (props) => {
     const [formState, setFormState] = useState({ search: "" });
@@ -25,7 +27,9 @@ const Search = (props) => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
         //   let searchResult = [];
-
+        if (!searchInput) {
+            return false;
+          }
         try {
             getPodcastsBySearchTerm(formState.searchInput) //api call with search term
                 .then(function (response) {
@@ -74,10 +78,37 @@ const Search = (props) => {
                             } else {
                                 let searchResult = JSON.parse(localStorage.getItem("searchResult"));
                                     console.log(searchResult);
-                                    console.log(searchResult.data.podcasts.data[0].title)
-                                    console.log(searchResult.data.podcasts.data[0].imageUrl)
-                                    console.log(searchResult.data.podcasts.data[0].numberOfEpisodes)
-                                    console.log(searchResult.data.podcasts.data[0].url)
+                                    // console.log(searchResult.data.podcasts.data[0].title)
+                                    // console.log(searchResult.data.podcasts.data[0].imageUrl)
+                                    // console.log(searchResult.data.podcasts.data[0].numberOfEpisodes)
+                                    // console.log(searchResult.data.podcasts.data[0].url)
+                                    const resultsObject = ({ id, title, imageURL, numberOfEpisodes, url }) => {
+                                        const searchResult = JSON.parse(localStorage.getItem("searchResult"));
+                                        const resultsArray = searchResult.data.podcasts.data
+                                        
+                                        const renderArray = resultsArray.map(result => {
+                                          id = result.id;
+                                          imageURL = result.imageURL;
+                                          numberOfEpisodes = result.numberOfEpisodes;
+                                          title = result.title;
+                                          url = result.url;
+
+                                          //push to global array variable 
+
+
+                                      
+                                          return (
+                            
+                                            <div className="podcast-card">
+                                              <p>{renderArray[0].title}</p>
+                                              <p>{imageURL}</p>
+                                              <p>{url}</p>
+                                              <p>{numberOfEpisodes}</p>
+                                              <p>{id}</p>
+                                            </div>
+                                          )
+                                        })
+                                    };  
                             }
                         });
                     }
@@ -141,7 +172,8 @@ const Search = (props) => {
                     </div>
                 </div>
 
-                <div className="podcasts"><PodcastCard />
+                <div className="resultsContainer">
+                    {/* <p>{renderArray[0].title}</p> */}
                     {/* <p>{searchResult.data.podcasts.data[0].title}</p> */}
                 </div>
             </div>
