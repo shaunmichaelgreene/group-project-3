@@ -16,10 +16,7 @@ import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
 import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
-
-// const REACT_APP_API_KEY = `${process.env.REACT_APP_API_KEY}`
-
-// console.log(REACT_APP_API_KEY)
+import Hero from "./components/Hero/hero";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,6 +44,7 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <Nav />
+        <Hero />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />

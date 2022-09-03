@@ -101,8 +101,7 @@ const Search = (props) => {
   const getLocalStorage = () => {
     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
   };
-  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult")).data
-    .podcasts.data;
+  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"))
   getLocalStorage();
 
   return (
@@ -147,14 +146,13 @@ const Search = (props) => {
           </div>
         </div>
 
-                <div className="container"></div>
-                    {savedPodcasts.map(savedPodcast => (
-                    <PodcastCard key={savedPodcast.id} podcast="podcast" />
-                    ))}
-                </div>
-            
-        </main>
-    );
+        <div className="container"></div>
+        {/* {savedPodcasts.map((savedPodcast) => (
+          <PodcastCard key={savedPodcast.id} podcast="podcast" />
+        ))} */}
+      </div>
+    </main>
+  );
 };
 
 export default Search;
