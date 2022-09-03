@@ -101,8 +101,7 @@ const Search = (props) => {
   const getLocalStorage = () => {
     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
   };
-  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult")).data
-    .podcasts.data;
+  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"))
   getLocalStorage();
 
   return (
@@ -129,7 +128,7 @@ const Search = (props) => {
           </div>
           <h4>Or choose from one of our popular categories!</h4>
           <div className="search-btn-container">
-            <button onClick={(e) => buttonSearch(e.target.textContent)}>
+            {/* <button onClick={(e) => buttonSearch(e.target.textContent)}>
               Dogs
             </button>
             <button onClick={(e) => buttonSearch(e.target.textContent)}>
@@ -143,18 +142,17 @@ const Search = (props) => {
             </button>
             <button onClick={(e) => buttonSearch(e.target.textContent)}>
               Dragons
-            </button>
+            </button> */}
           </div>
         </div>
 
-                <div className="container"></div>
-                    {savedPodcasts.map(savedPodcast => (
-                    <PodcastCard key={savedPodcast.id} podcast="podcast" />
-                    ))}
-                </div>
-            
-        </main>
-    );
+        <div className="container"></div>
+        {/* {savedPodcasts.map((savedPodcast) => (
+          <PodcastCard key={savedPodcast.id} podcast="podcast" />
+        ))} */}
+      </div>
+    </main>
+  );
 };
 
 export default Search;

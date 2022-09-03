@@ -1,4 +1,4 @@
-const podchaserToken = `${process.env.REACT_APP_podchaserToken}`;
+const podchaserToken = `${process.env.REACT_APP_API_KEY}`;
 // console.log (podchaserToken)
 
 //NEW PODCAST QUERIES (PODCHASER)
