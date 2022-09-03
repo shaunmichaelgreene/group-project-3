@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/group-project-3",
   {
@@ -12,3 +11,5 @@ mongoose.connect(
 );
 
 module.exports = mongoose.connection;
+
+// localhost:27017/
