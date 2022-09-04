@@ -26,12 +26,10 @@ const Podcast = ({ podcast }) => (
     </div>
   </div>
 );
-
 const SearchResults = () => {
   // does not work - additional tweaking needed
   //   if (Auth.loggedIn) {
   //     alert('You must logged in to see this page. Please use the navigation links sign up or log in. Click OK to redirect')
-
   //     return <Navigate to="/" />;
   //   }
 
@@ -39,7 +37,6 @@ const SearchResults = () => {
   //   if (loading) {
   //     return <div>Loading...</div>;
   //   }
-
   //need to add new logic to map over all results and create cards
   //change "results-container" class to card-group once logic is in place?
   return (
@@ -75,24 +72,18 @@ const SearchResults = () => {
     </div>
   );
 };
-
 export default SearchResults;
-
 // const resultsObject = ({ id, title, imageURL, numberOfEpisodes, url }) => {
 //     const searchResult = JSON.parse(localStorage.getItem("searchResult"));
 //     const resultsArray = searchResult.data.podcasts.data
-
 //     const renderArray = resultsArray.map(result => {
 //       id = result.id;
 //       imageURL = result.imageURL;
 //       numberOfEpisodes = result.numberOfEpisodes;
 //       title = result.title;
 //       url = result.url;
-
 //       //push to global array variable
-
 //       return (
-
 //         <div className="podcast-card">
 //           <p>{renderArray[0].title}</p>
 //           <p>{imageURL}</p>
