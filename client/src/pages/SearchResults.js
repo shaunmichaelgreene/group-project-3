@@ -5,8 +5,7 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 // import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
-let searchResult = JSON.parse(localStorage.getItem("searchResult")).data.podcasts.data;
-console.log(searchResult);
+
 
 const SearchResults = () => {
 
@@ -21,7 +20,8 @@ const SearchResults = () => {
 //   if (loading) {
 //     return <div>Loading...</div>;
 //   }
-
+let searchResult = JSON.parse(localStorage.getItem("searchResult")).data.podcasts.data;
+console.log(searchResult);
   
 //need to add new logic to map over all results and create cards
   return (
