@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
@@ -9,100 +9,93 @@ import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
 
 const Search = (props) => {
-  const [formState, setFormState] = useState({ search: "" });
-  // const [search, { error }] = useQuery(SEARCH);
+    const [formState, setFormState] = useState({ search: "" });
 
-  // update state based on form input changes
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+    // update state based on form input changes
+    const handleChange = (event) => {
+        const { name, value } = event.target;
 
-    setFormState({
-      ...formState,
-      [name]: value,
-    });
-  };
-
-  // submit form
-  const handleFormSubmit = async (event) => {
-    event.preventDefault();
-    //   let searchResult = [];
-
-    if (!searchInput) {
-      return false;
-    }
-
-    try {
-      getPodcastsBySearchTerm(formState.searchInput) //api call with search term
-        .then(function (response) {
-          if (response.ok) {
-            //if call is successful...
-            // console.log(response.json());
-            response.json().then(function (data) {
-              //convert response to json
-
-              //temporary logic to check if search result exists in local storage or not
-
-              if (localStorage.getItem("searchResult") === null) {
-                let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-                localStorage.setItem(
-                  "searchResult",
-                  JSON.stringify(searchResult)
-                );
-              } else {
-                //if localStorage does already contain the data, fetch from local storage
-                let searchResult = JSON.parse(
-                  localStorage.getItem("searchResult")
-                );
-                console.log(searchResult);
-                //will likely break this up into a separate helper function, just making sure the call logic is working.
-              }
-            });
-          }
+        setFormState({
+        ...formState,
+        [name]: value,
         });
-      console.log(formState.searchInput);
-    } catch (e) {
-      console.error(e);
-    }
-  };
+    };
 
-  const buttonSearch = async (searchTerm) => {
-    console.log(searchTerm);
-    try {
-      getPodcastsBySearchTerm(searchTerm) //api call with search term
-        .then(function (response) {
-          if (response.ok) {
-            response.json().then(function (data) {
-              if (localStorage.getItem("searchResult") === null) {
-                let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-                localStorage.setItem(
-                  "searchResult",
-                  JSON.stringify(searchResult)
-                );
-              } else {
-                let searchResult = JSON.parse(
-                  localStorage.getItem("searchResult")
-                );
-                console.log(searchResult);
-                console.log(searchResult.data.podcasts.data[0].title);
-                console.log(searchResult.data.podcasts.data[0].imageUrl);
-                console.log(
-                  searchResult.data.podcasts.data[0].numberOfEpisodes
-                );
-                console.log(searchResult.data.podcasts.data[0].url);
-              }
-            });
-          }
-        });
-    } catch (e) {
-      console.error(e);
-    }
-  };
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
 
-  const getLocalStorage = () => {
-    localStorage.getItem("searchResult", JSON.stringify("searchResult"));
-  };
-  let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"))
-  getLocalStorage();
+        if (!searchInput) {
+          return false;
+        }
+
+        function loadResult() {
+            setIsLoading(true);
+            // try {
+            getPodcastsBySearchTerm(formState.searchInput) //api call with search term
+                .then((response) => response.json())
+                .then(function (data) {
+                    setResults([...results, data]);
+                    setIsLoading(false);
+                });
+        }                
+        const [results, setResults]  = useState([]);
+        const [isLoading, setIsLoading] = useState(true);
+        useEffect(() => {
+            loadResult();
+        }, []);
+    
+        if (results.length === 0) {
+            return <p>Loading...</p>;
+        }
+        return (
+            <div>
+                <ul>
+                    {results.map((result) => {
+                        return <li key={result.key}>{result.result}</li>;
+                    })}
+                </ul>
+            </div>
+        );
+                                
+    }
+        
+   
+
+//   const resultsObject = ({ id, title, imageURL, numberOfEpisodes, url }) => {
+//     const searchResult = JSON.parse(localStorage.getItem("searchResult"));
+//     const resultsArray = searchResult.data.podcasts.data
+    
+//     const renderArray = resultsArray.map(result => {
+//       id = result.id;
+//       imageURL = result.imageURL;
+//       numberOfEpisodes = result.numberOfEpisodes;
+//       title = result.title;
+//       url = result.url;
+
+//       //push to global array variable 
+
+
+  
+//       return (
+
+//         <div className="podcast-card">
+//           <p>{renderArray[0].title}</p>
+//           <p>{imageURL}</p>
+//           <p>{url}</p>
+//           <p>{numberOfEpisodes}</p>
+//           <p>{id}</p>
+//         </div>
+//       )
+//     })
+ 
+
+//   const getLocalStorage = () => {
+//     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
+//   };
+//   const resultsArray = searchResult.data.podcasts.data
+//   let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"))
+//   getLocalStorage();
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -163,3 +156,4 @@ const Search = (props) => {
 };
 
 export default Search;
+        
