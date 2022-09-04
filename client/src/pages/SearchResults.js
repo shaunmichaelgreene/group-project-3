@@ -8,7 +8,26 @@ import { RiSdCardFill } from "react-icons/ri";
 let searchResult = JSON.parse(localStorage.getItem("searchResult")).data
     .podcasts.data;
 console.log(searchResult);
-let resultsArray = searchResult.data.podcasts.data
+
+//podcast component
+const Podcast = ({podcast}) => (
+    <div className="podcast-card card">
+        <img
+                src={podcast.imageUrl}
+                alt={podcast.title}
+                className="podcast-img card-img-top"
+                ></img>
+        <div className="card-body">
+            <h5 className="card-title">{podcast.title}</h5>
+            <p className="card-text">
+                Episode Count: {podcast.numberOfEpisodes}
+            </p>
+            <a href={podcast.url} className="btn btn-primary">
+                    Check It Out On Podchaser!
+            </a>
+        </div>
+    </div>
+)
 
 const SearchResults = () => {
     // does not work - additional tweaking needed
@@ -22,6 +41,7 @@ const SearchResults = () => {
     //   if (loading) {
     //     return <div>Loading...</div>;
     //   }
+
 
     //need to add new logic to map over all results and create cards
     //change "results-container" class to card-group once logic is in place? 
@@ -48,6 +68,11 @@ const SearchResults = () => {
                                 Check It Out On Podchaser!
                         </a>
 
+                    </div>
+                    <div className="mapped-container">
+                        {searchResult.map(podcast => (
+                            <Podcast key={podcast.id} podcast={podcast} />
+                        ))}
                     </div>
                 </div>
             </div>
