@@ -33,12 +33,12 @@ body {
   font-family: "Arial", cursive;
 }
 
-.nav a {
+.content a {
   color: #e9ef22;
   padding: 0 2%;
 }
 
-.nav img {
+.content img {
   border: solid black 16px;
   border-radius: 25px;
 }
