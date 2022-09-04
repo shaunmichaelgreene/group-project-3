@@ -23,7 +23,7 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 150px;
+  height: 250px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

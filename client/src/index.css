@@ -6,8 +6,8 @@
 } */
 
 * {
-  /* box-sizing: border-box; 
-  <-- this is making login box mess up */
+  /* box-sizing: border-box;  */
+  /*<-- this is making login box mess up */
   margin: 0;
   padding: 0;
 }
