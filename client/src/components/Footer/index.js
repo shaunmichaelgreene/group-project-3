@@ -29,45 +29,32 @@ const Footer = () => {
         </div>
         <div className="col-container">
           <div className="col">
-            <h3>Navigation</h3>
-            <p>Home</p>
-            <p>Profile</p>
-            <p>Search</p>
-            <p>Contact</p>
+            <h3>Our Story</h3>
+            <p>
+              We are a group of software developers that love podcasts and animals. We created
+               this app for users that want a variety of different choices when they search a specific
+                topic. We hope you find what you are looking for while exploring the possibilities. 
+            </p>
           </div>
           <div className="col">
-            <h3>My Account</h3>
-            <p>Home</p>
-            <p>Data</p>
-            <p>Cloud</p>
-            <p>Contact</p>
+            <h3> Our Mission </h3>
+            <p>
+              "To educate and entertain thought the power of information about animals and 
+              all things for users to learn and have fun."
+            </p>
           </div>
-          <div className="col">
-            <h3>Information</h3>
-            <p>Home</p>
-            <p>Data</p>
-            <p>Cloud</p>
-            <p>Contact</p>
-          </div>
-          <div className="col">
-            <h3>Legal</h3>
-            <p>Home</p>
-            <p>Data</p>
-            <p>Cloud</p>
-            <p>Contact</p>
-          </div>
-          <form>
-            <h3>Join Our Team</h3>
-            <input type="email" placeholder="Enter your email" />
-            {/* <FiMail className="mail-icon" /> */}
-            <div className="social-group">
-              <FiInstagram className="social-icon" />
-              <FiFacebook className="social-icon" />
-              <FiLinkedin className="social-icon" />
-              {/* <FiDribbble className="social-icon" /> */}
-              <FiGithub className="social-icon" />
+        
+          <div className="row-container">
+            
+            <div className="social-group" >
+              <h3>Join Our Team</h3>
+              <a ><FiGithub className="social-icon"/>Shaun  </a>
+              <br></br>
+              <a ><FiGithub className="social-icon"/>Alana </a>
+              <br></br>
+              <a ><FiGithub className="social-icon"/>Matt </a>
             </div>
-          </form>
+          </div>
         </div>
         <div className="logo-footer">
           <h2>
