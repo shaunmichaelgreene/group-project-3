@@ -3,8 +3,8 @@ import Photo from "../assets/server-error.jpg";
 
 const NoMatch = () => {
   return (
-    <div>
-      <h4>Oops, we couldn't find that pawdcast</h4>
+    <div style={{ textAlign: "center" }}>
+      <h4 >Oops, we couldn't find that page!</h4>
       <img
         src={Photo}
         style={{ width: "60%" }}
