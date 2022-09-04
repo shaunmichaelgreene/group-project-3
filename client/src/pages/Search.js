@@ -8,6 +8,7 @@ import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
 
+
 const Search = (props) => {
   const [formState, setFormState] = useState({ search: "" });
   // const [search, { error }] = useQuery(SEARCH);
