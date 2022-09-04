@@ -11,8 +11,8 @@ const Home = () => {
     <main className="flex-row justify-center mb-4">
       {loggedIn && <div className="col-12 mb-3"></div>}
 
-      <div className="col-12 col-md-6">
-        <div className="card">HOME PAGE
+      <div className="">
+        <div className="homepage-card">HOME PAGE
         <h2>Hello</h2>
         </div>
       </div>
