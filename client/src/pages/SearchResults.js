@@ -45,3 +45,32 @@ const SearchResults = () => {
 };
 
 export default SearchResults;
+
+
+
+// const resultsObject = ({ id, title, imageURL, numberOfEpisodes, url }) => {
+//     const searchResult = JSON.parse(localStorage.getItem("searchResult"));
+//     const resultsArray = searchResult.data.podcasts.data
+    
+//     const renderArray = resultsArray.map(result => {
+//       id = result.id;
+//       imageURL = result.imageURL;
+//       numberOfEpisodes = result.numberOfEpisodes;
+//       title = result.title;
+//       url = result.url;
+
+//       //push to global array variable 
+
+
+  
+//       return (
+
+//         <div className="podcast-card">
+//           <p>{renderArray[0].title}</p>
+//           <p>{imageURL}</p>
+//           <p>{url}</p>
+//           <p>{numberOfEpisodes}</p>
+//           <p>{id}</p>
+//         </div>
+//       )
+//     })

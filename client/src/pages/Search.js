@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
@@ -26,7 +26,6 @@ const Search = (props) => {
     // submit form
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        //   let searchResult = [];
 
         if (!searchInput) {
             return false;
@@ -39,14 +38,16 @@ const Search = (props) => {
                         //if call is successful...
                         response.json().then(function (data) {
                             //convert response to json
-
                             let searchResult = data; // add to local storage
                             localStorage.setItem(
                                 "searchResult",
                                 JSON.stringify(searchResult)
                             );
-                            console.log(searchResult);
-                            <Navigate to="/search-results" />;
+                            debugger
+                                console.log(searchResult);
+                                return <Navigate to="/search-results" />;
+                             
+                            // return <Navigate to="/search-results" />;
                         });
                     }
                 });
@@ -56,51 +57,51 @@ const Search = (props) => {
         }
     };
 
-    const buttonSearch = async (searchTerm) => {
-        console.log(searchTerm);
-        try {
-            getPodcastsBySearchTerm(searchTerm) //api call with search term
-                .then(function (response) {
-                    if (response.ok) {
-                        response.json().then(function (data) {
-                            if (localStorage.getItem("searchResult") === null) {
-                                let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-                                localStorage.setItem(
-                                    "searchResult",
-                                    JSON.stringify(searchResult)
-                                );
-                            } else {
-                                let searchResult = JSON.parse(
-                                    localStorage.getItem("searchResult")
-                                );
-                                console.log(searchResult);
-                                console.log(
-                                    searchResult.data.podcasts.data[0].title
-                                );
-                                console.log(
-                                    searchResult.data.podcasts.data[0].imageUrl
-                                );
-                                console.log(
-                                    searchResult.data.podcasts.data[0]
-                                        .numberOfEpisodes
-                                );
-                                console.log(
-                                    searchResult.data.podcasts.data[0].url
-                                );
-                            }
-                        });
-                    }
-                });
-        } catch (e) {
-            console.error(e);
-        }
-    };
+    // const buttonSearch = async (searchTerm) => {
+    //     console.log(searchTerm);
+    //     try {
+    //         getPodcastsBySearchTerm(searchTerm) //api call with search term
+    //             .then(function (response) {
+    //                 if (response.ok) {
+    //                     response.json().then(function (data) {
+    //                         if (localStorage.getItem("searchResult") === null) {
+    //                             let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
+    //                             localStorage.setItem(
+    //                                 "searchResult",
+    //                                 JSON.stringify(searchResult)
+    //                             );
+    //                         } else {
+    //                             let searchResult = JSON.parse(
+    //                                 localStorage.getItem("searchResult")
+    //                             );
+    //                             console.log(searchResult);
+    //                             console.log(
+    //                                 searchResult.data.podcasts.data[0].title
+    //                             );
+    //                             console.log(
+    //                                 searchResult.data.podcasts.data[0].imageUrl
+    //                             );
+    //                             console.log(
+    //                                 searchResult.data.podcasts.data[0]
+    //                                     .numberOfEpisodes
+    //                             );
+    //                             console.log(
+    //                                 searchResult.data.podcasts.data[0].url
+    //                             );
+    //                         }
+    //                     });
+    //                 }
+    //             });
+    //     } catch (e) {
+    //         console.error(e);
+    //     }
+    // };
 
-    const getLocalStorage = () => {
-        localStorage.getItem("searchResult", JSON.stringify("searchResult"));
-    };
-    let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"));
-    getLocalStorage();
+    // const getLocalStorage = () => {
+    //     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
+    // };
+    // let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"));
+    // getLocalStorage();
 
     return (
         <main className="flex-row justify-center mb-4">
