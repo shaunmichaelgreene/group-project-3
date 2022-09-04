@@ -5,53 +5,63 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 // import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
-let searchResult = JSON.parse(localStorage.getItem("searchResult")).data.podcasts.data;
+let searchResult = JSON.parse(localStorage.getItem("searchResult")).data
+    .podcasts.data;
 console.log(searchResult);
+let resultsArray = searchResult.data.podcasts.data
 
 const SearchResults = () => {
+    // does not work - additional tweaking needed
+    //   if (Auth.loggedIn) {
+    //     alert('You must logged in to see this page. Please use the navigation links sign up or log in. Click OK to redirect')
 
-  // does not work - additional tweaking needed
-//   if (Auth.loggedIn) {
-//     alert('You must logged in to see this page. Please use the navigation links sign up or log in. Click OK to redirect')
+    //     return <Navigate to="/" />;
+    //   }
 
-//     return <Navigate to="/" />;
-//   }
+    //does not work - undefined
+    //   if (loading) {
+    //     return <div>Loading...</div>;
+    //   }
 
-//does not work - undefined
-//   if (loading) {
-//     return <div>Loading...</div>;
-//   }
+    //need to add new logic to map over all results and create cards
+    //change "results-container" class to card-group once logic is in place? 
+    return (
+        <div className="main">
+            <div className="flex-row mb-3">
+                <h2 className="bg-dark text-secondary p-3 display-inline-block text-center">
+                    SEARCH RESULTS
+                </h2>
+            </div>
+            <div className="results-container">
+                <div className="podcast-card card">
+                        <img
+                            src={searchResult[0].imageUrl}
+                            alt={searchResult[0].title}
+                            className="podcast-img card-img-top"
+                            ></img>
+                    <div className="card-body">
+                        <h5 className="card-title">{searchResult[0].title}</h5>
+                        <p className="card-text">
+                            Episode Count: {searchResult[0].numberOfEpisodes}
+                        </p>
+                        <a href={searchResult[0].url} className="btn btn-primary">
+                                Check It Out On Podchaser!
+                        </a>
 
-  
-//need to add new logic to map over all results and create cards
-  return (
-    <div>
-      <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          SEARCH RESULTS:
-        </h2>
-      </div>
-
-      <div className="flex-row justify-space-between mb-3">
-        <div className="col-12 mb-3 col-lg-8">
-          <p>{searchResult[0].title}</p>
-          <p>{searchResult[0].url}</p>
-          <p>{searchResult[0].id}</p>
-          <p>{searchResult[0].imageUrl}</p>
+                    </div>
+                </div>
+            </div>
+            
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default SearchResults;
 
-
-
 // const resultsObject = ({ id, title, imageURL, numberOfEpisodes, url }) => {
 //     const searchResult = JSON.parse(localStorage.getItem("searchResult"));
 //     const resultsArray = searchResult.data.podcasts.data
-    
+
 //     const renderArray = resultsArray.map(result => {
 //       id = result.id;
 //       imageURL = result.imageURL;
@@ -59,10 +69,8 @@ export default SearchResults;
 //       title = result.title;
 //       url = result.url;
 
-//       //push to global array variable 
+//       //push to global array variable
 
-
-  
 //       return (
 
 //         <div className="podcast-card">

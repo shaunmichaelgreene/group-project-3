@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";
@@ -33,6 +33,7 @@ const Search = (props) => {
         try {
             getPodcastsBySearchTerm(formState.searchInput) //api call with search term
                 .then(function (response) {
+                    const navigate = useNavigate();
                     if (response.ok) {
                         //if call is successful...
                         response.json().then(function (data) {
@@ -56,11 +57,10 @@ const Search = (props) => {
         }
     };
 
-    
     return (
         <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-md-6">
-                <div className="card">
+            <div className="search-form-container col-12 col-md-6">
+                <div className="search-form card">
                     <h4 className="card-header">
                         Find your favorite pawed-casts here!
                     </h4>
