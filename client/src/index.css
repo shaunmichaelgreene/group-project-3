@@ -39,7 +39,7 @@ body {
 }
 
 .search-form {
- text-align: center;
+  text-align: center;
 }
 
 .content a {
@@ -67,7 +67,7 @@ body {
 }
 
 .navbar .nav-menu {
-  flex-direction: column
+  flex-direction: column;
 }
 
 /* end relocate nav menu */

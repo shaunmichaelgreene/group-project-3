@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";
@@ -7,9 +7,6 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
-// import SearchResults from "./SearchResults";
-
-
 
 const Search = (props) => {
   const [formState, setFormState] = useState({ search: "" });
@@ -36,6 +33,7 @@ const Search = (props) => {
     try {
       getPodcastsBySearchTerm(formState.searchInput) //api call with search term
         .then(function (response) {
+          const navigate = useNavigate();
           if (response.ok) {
             //if call is successful...
             response.json().then(function (data) {
@@ -45,7 +43,7 @@ const Search = (props) => {
                 "searchResult",
                 JSON.stringify(searchResult)
               );
-              // debugger;
+              debugger;
               console.log(searchResult);
               return <Navigate to="/search-results" />;
 
@@ -61,8 +59,8 @@ const Search = (props) => {
 
   return (
     <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-md-6">
-        <div className="card">
+      <div className="search-form-container col-12 col-md-6">
+        <div className="search-form card">
           <h4 className="card-header">Find your favorite pawed-casts here!</h4>
           <div className="card-body">
             <form onSubmit={handleFormSubmit}>
@@ -77,8 +75,7 @@ const Search = (props) => {
               />
 
               <button className="btn d-block w-100" type="submit">
-                Search! 
-                {/* <SearchResults/> */}
+                Search!
               </button>
             </form>
           </div>
