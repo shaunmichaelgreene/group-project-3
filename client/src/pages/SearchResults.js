@@ -8,7 +8,7 @@ import { RiSdCardFill } from "react-icons/ri";
 let searchResult = JSON.parse(localStorage.getItem("searchResult")).data
     .podcasts.data;
 console.log(searchResult);
-// let resultsArray = searchResult.data.podcasts.data
+let resultsArray = searchResult.data.podcasts.data
 
 const SearchResults = () => {
     // does not work - additional tweaking needed
