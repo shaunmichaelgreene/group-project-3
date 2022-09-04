@@ -7,7 +7,7 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 
 
 
