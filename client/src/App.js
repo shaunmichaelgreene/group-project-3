@@ -17,6 +17,7 @@ import Nav from "./components/Nav";
 import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
 import Hero from "./components/Hero/hero";
+import SearchResults from "./pages/SearchResults";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -51,6 +52,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/search" element={<Search />} />
           <Route path="*" element={<NoMatch />} />
+          <Route path="/search-results" element={<SearchResults />} />
         </Routes>
 
         <div>
