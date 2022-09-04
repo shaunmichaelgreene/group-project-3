@@ -7,6 +7,7 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
+import SearchResults from "./SearchResults";
 
 
 
@@ -76,7 +77,8 @@ const Search = (props) => {
               />
 
               <button className="btn d-block w-100" type="submit">
-                Search!
+                Search! 
+                {/* <SearchResults/> */}
               </button>
             </form>
           </div>
