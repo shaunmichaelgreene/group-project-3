@@ -35,7 +35,7 @@ const Search = (props) => {
     try {
       getPodcastsBySearchTerm(formState.searchInput) //api call with search term
         .then(function (response) {
-          const navigate = useNavigate();
+          // const navigate = useNavigate();
           if (response.ok) {
             //if call is successful...
             response.json().then(function (data) {
@@ -47,7 +47,7 @@ const Search = (props) => {
               );
               // debugger;
               console.log(searchResult);
-              return <Navigate to="/search-results" />;
+              // return <Navigate to="/search-results" />;
 
               // return <Navigate to="/search-results" />;
             });
