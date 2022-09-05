@@ -27,8 +27,6 @@ import {
   GiRaccoonHead,
 } from "react-icons/gi";
 
-
-
 const Search = (props) => {
   let navigate = useNavigate();
   let path = `/search-results`;
