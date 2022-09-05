@@ -7,8 +7,10 @@ import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const Search = (props) => {
+  const loggedIn = Auth.loggedIn();
   const [formState, setFormState] = useState({ search: "" });
   // const [search, { error }] = useQuery(SEARCH);
 
@@ -43,7 +45,7 @@ const Search = (props) => {
                 "searchResult",
                 JSON.stringify(searchResult)
               );
-              debugger;
+              // debugger;
               console.log(searchResult);
               return <Navigate to="/search-results" />;
 
@@ -73,10 +75,11 @@ const Search = (props) => {
                 value={formState.searchInput}
                 onChange={handleChange}
               />
-
-              <button className="btn d-block w-100" type="submit">
-                Search!
-              </button>
+              {loggedIn && (
+                <button className="btn d-block w-100" type="submit">
+                  Search!
+                </button>
+              )}
             </form>
           </div>
         </div>
