@@ -20,6 +20,7 @@ const Podcast = ({ podcast }) => (
     <div className="card-body">
       <h5 className="card-title">{podcast.title}</h5>
       <p className="card-text">Episode Count: {podcast.numberOfEpisodes}</p>
+      <p className="card-text description">About: {podcast.description}</p>
       <a href={podcast.url} className="btn btn-primary">
         Check It Out On Podchaser!
       </a>
