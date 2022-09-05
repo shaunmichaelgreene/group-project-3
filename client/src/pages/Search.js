@@ -8,9 +8,24 @@ import { getPodcastsBySearchTerm } from "../utils/API";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
-import { BsBugFill } from 'react-icons/bs';
-import { FaDragon, FaDog, FaCat, FaHorse, FaFrog } from 'react-icons/fa';
-import { GiSpermWhale, GiSittingDog, GiDolphin, GiHummingbird, GiTurtle, GiDinosaurRex, GiPig, GiSheep, GiCat, GiSquirrel, GiElephant, GiLion, GiRabbit, GiRaccoonHead } from 'react-icons/gi';
+import { BsBugFill } from "react-icons/bs";
+import { FaDragon, FaDog, FaCat, FaHorse, FaFrog } from "react-icons/fa";
+import {
+  GiSpermWhale,
+  GiSittingDog,
+  GiDolphin,
+  GiHummingbird,
+  GiTurtle,
+  GiDinosaurRex,
+  GiPig,
+  GiSheep,
+  GiCat,
+  GiSquirrel,
+  GiElephant,
+  GiLion,
+  GiRabbit,
+  GiRaccoonHead,
+} from "react-icons/gi";
 
 
 
@@ -21,30 +36,29 @@ const Search = (props) => {
 
   //buttonSearch logic starts here
 
-const buttonSearch = async (searchTerm) => {
-  console.log(searchTerm);
-  try {
-    getPodcastsBySearchTerm(searchTerm) //api call with search term
-      .then(function (response) {
-        if (response.ok) {
-          response.json().then(function (data) {
-              
-            let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-            localStorage.setItem(
+  const buttonSearch = async (searchTerm) => {
+    console.log(searchTerm);
+    try {
+      getPodcastsBySearchTerm(searchTerm) //api call with search term
+        .then(function (response) {
+          if (response.ok) {
+            response.json().then(function (data) {
+              let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
+              localStorage.setItem(
                 "searchResult",
                 JSON.stringify(searchResult)
-            );
-            console.log(searchResult);
-            navigate(path);
-          });
-        }
-      });
+              );
+              console.log(searchResult);
+              navigate(path);
+            });
+          }
+        });
     } catch (e) {
-        console.error(e);
+      console.error(e);
     }
-};
+  };
 
-//buttonSearch logic ends here
+  //buttonSearch logic ends here
 
   return (
     <main className="flex-row justify-center mb-4">
@@ -53,7 +67,9 @@ const buttonSearch = async (searchTerm) => {
           <h4 className="card-header">Find your favorite pawed-casts here!</h4>
           <div className="card-body">
             <div className="search-btn-container">
-              <button onClick={(e) => buttonSearchHandler(e.target.textContent)}>
+              <button
+                onClick={(e) => buttonSearchHandler(e.target.textContent)}
+              >
                 Dogs <GiSittingDog />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
@@ -66,55 +82,55 @@ const buttonSearch = async (searchTerm) => {
                 Horses <FaHorse />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dragons  <FaDragon />
+                Dragons <FaDragon />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Raccoons  <GiRaccoonHead />
+                Raccoons <GiRaccoonHead />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dolphins  <GiDolphin />
+                Dolphins <GiDolphin />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Birds  <GiHummingbird />
+                Birds <GiHummingbird />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Turtles  <GiTurtle />
+                Turtles <GiTurtle />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dinosaurs  <GiDinosaurRex />
+                Dinosaurs <GiDinosaurRex />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Insects  <BsBugFill />
+                Insects <BsBugFill />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Pigs  <GiPig />
+                Pigs <GiPig />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Sheep  <GiSheep />
+                Sheep <GiSheep />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Puppies  <FaDog />
+                Puppies <FaDog />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Kittens  <GiCat />
+                Kittens <GiCat />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Squirrels  <GiSquirrel />
+                Squirrels <GiSquirrel />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Elephants  <GiElephant />
+                Elephants <GiElephant />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Frogs  <FaFrog />
+                Frogs <FaFrog />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Lions  <GiLion />
+                Lions <GiLion />
               </button>
               <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Rabbits  <GiRabbit />
+                Rabbits <GiRabbit />
               </button>
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </main>
@@ -166,8 +182,7 @@ export default Search;
 // };
 
 // const [formState, setFormState] = useState({ search: "" });
-  // const [search, { error }] = useQuery(SEARCH);
-
+// const [search, { error }] = useQuery(SEARCH);
 
 // const getLocalStorage = () => {
 //     localStorage.getItem("searchResult", JSON.stringify("searchResult"));
@@ -176,7 +191,6 @@ export default Search;
 // getLocalStorage();
 
 {
-  
 }
 
 //original search form handler logic:
@@ -213,49 +227,48 @@ export default Search;
 // }
 // };
 
-  //original formState logic
-  // update state based on form input changes
-  // const handleChange = (event) => {
-  //   const { name, value } = event.target;
+//original formState logic
+// update state based on form input changes
+// const handleChange = (event) => {
+//   const { name, value } = event.target;
 
-  //   setFormState({
-  //     ...formState,
-  //     [name]: value,
-  //   });
-  // };
+//   setFormState({
+//     ...formState,
+//     [name]: value,
+//   });
+// };
 
+//search form handler logic (removed 9/5/2022)
+// const handleFormSubmit = async (event) => {
+//   event.preventDefault();
 
-  //search form handler logic (removed 9/5/2022)
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
+//   if (!searchInput) {
+//     return false;
+//   }
 
-  //   if (!searchInput) {
-  //     return false;
-  //   }
+//   try {
+//     getPodcastsBySearchTerm(formState.searchInput) //api call with search term
+//       .then(function (response) {
+//         // const navigate = useNavigate();
+//         if (response.ok) {
+//           //if call is successful...
+//           response.json().then(function (data) {
+//             //convert response to json
+//             let searchResult = data; // add to local storage
+//             localStorage.setItem(
+//               "searchResult",
+//               JSON.stringify(searchResult)
+//             );
+//             // debugger;
+//             console.log(searchResult);
+//             // return <Navigate to="/search-results" />;
 
-  //   try {
-  //     getPodcastsBySearchTerm(formState.searchInput) //api call with search term
-  //       .then(function (response) {
-  //         // const navigate = useNavigate();
-  //         if (response.ok) {
-  //           //if call is successful...
-  //           response.json().then(function (data) {
-  //             //convert response to json
-  //             let searchResult = data; // add to local storage
-  //             localStorage.setItem(
-  //               "searchResult",
-  //               JSON.stringify(searchResult)
-  //             );
-  //             // debugger;
-  //             console.log(searchResult);
-  //             // return <Navigate to="/search-results" />;
-
-  //             // return <Navigate to="/search-results" />;
-  //           });
-  //         }
-  //       });
-  //     console.log(formState.searchInput);
-  //   } catch (e) {
-  //     console.error(e);
-  //   }
-  // };
+//             // return <Navigate to="/search-results" />;
+//           });
+//         }
+//       });
+//     console.log(formState.searchInput);
+//   } catch (e) {
+//     console.error(e);
+//   }
+// };
