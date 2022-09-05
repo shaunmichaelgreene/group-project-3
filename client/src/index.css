@@ -48,9 +48,11 @@ body {
 }
 
 .content img {
-  border: solid black 16px;
+  border: solid black 16px;  
+  /* above causes a border around "pawedcaster" */ 
   border-radius: 25px;
 }
+
 
 .logged-in a {
   padding: 0 10%;
@@ -63,7 +65,7 @@ body {
 
 /* relocate nav menu */
 .nav-menu {
-  margin-left: -25%;
+  margin-left: -15%;
 }
 
 .navbar .nav-menu {

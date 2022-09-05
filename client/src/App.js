@@ -55,12 +55,12 @@ function App() {
           <Route path="/search-results" element={<SearchResults />} />
         </Routes>
 
-        <div>
+        {/* <div>
           <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
             Open Modal
           </button>
           {isOpen && <Modal setIsOpen={setIsOpen} />}
-        </div>
+        </div> */}
         <Footer />
       </Router>
     </ApolloProvider>
