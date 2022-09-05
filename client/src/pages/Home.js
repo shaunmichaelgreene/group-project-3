@@ -12,7 +12,7 @@ const Home = () => {
       {loggedIn && <div className="col-12 mb-3"></div>}
 
       <div className="">
-        <div className="homepage-card">HOME PAGE
+        <div className="homepage-card">
         <h2>Hello</h2>
         </div>
       </div>

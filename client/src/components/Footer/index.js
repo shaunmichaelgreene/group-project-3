@@ -31,28 +31,39 @@ const Footer = () => {
           <div className="col">
             <h3>Our Story</h3>
             <p>
-              We are a group of software developers that love podcasts and animals. We created
-               this app for users that want a variety of different choices when they search a specific
-                topic. We hope you find what you are looking for while exploring the possibilities. 
+              We are a group of software developers that love podcasts and
+              animals. We created this app for users that want a variety of
+              different choices when they search a specific topic. We hope you
+              find what you are looking for while exploring the possibilities.
             </p>
           </div>
           <div className="col">
             <h3> Our Mission </h3>
             <p>
-              "To educate and entertain thought the power of information about animals and 
-              all things for users to learn and have fun."
+              "To educate and entertain thought the power of information about
+              animals and all things for users to learn and have fun."
             </p>
           </div>
-        
+
           <div className="row-container">
-            
-            <div className="social-group" >
+            <div className="social-group">
               <h3>Join Our Team</h3>
-              <a ><FiGithub className="social-icon"/>Shaun  </a>
+              <input type="email" placeholder="Enter your email" />
               <br></br>
-              <a ><FiGithub className="social-icon"/>Alana </a>
+              <a>
+                <FiGithub className="social-icon" />
+                Shaun{" "}
+              </a>
               <br></br>
-              <a ><FiGithub className="social-icon"/>Matt </a>
+              <a>
+                <FiGithub className="social-icon" />
+                Alana{" "}
+              </a>
+              <br></br>
+              <a>
+                <FiGithub className="social-icon" />
+                Matt{" "}
+              </a>
             </div>
           </div>
         </div>
