@@ -79,7 +79,7 @@ const Search = (props) => {
                 <button className="btn d-block w-100" type="submit">
                   Search!
                 </button>
-              )}
+              ) }
             </form>
           </div>
         </div>
