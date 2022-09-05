@@ -91,6 +91,16 @@ ul {
 
 .podcast-card {
   width: 18rem;
+  margin: 2%;
+}
+
+.podcast-card:hover {
+  border:rgb(228, 200, 44) solid 5px;
+  opacity: .8;
+}
+
+.results-heading {
+  color:rgb(228, 200, 44);
 }
 
 /* .podcast-img {
@@ -100,6 +110,13 @@ ul {
 .results-container {
   display: flex;
   justify-content: center;
+  margin-left: 10%;
+}
+
+.mapped-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card-body a {
