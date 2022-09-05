@@ -81,6 +81,11 @@ ul {
   list-style-type: none;
 }
 
+.homepage-card {
+  text-align: center;
+  /* background: #fff; */
+}
+
 .podcast-card {
   width: 18rem;
 }
