@@ -67,7 +67,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="logo-footer">
+        <div className="logo-footer" style={{ textAlign: "center" }}>
           <h2>
             Pawedcaster
             <GiSittingDog className="icon" />
