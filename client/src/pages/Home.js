@@ -12,7 +12,7 @@ const Home = () => {
     <main className="flex-row justify-center mb-4">
       <div className="">
         <div className="homepage-card">
-          <h2>Welcome, please login.</h2>
+          <h2>Welcome!</h2>
           {/* below is making sure the search doesn't show unless logged in */}
           {loggedIn && (
             <div className="col-12 mb-3">

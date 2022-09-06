@@ -48,11 +48,10 @@ const Footer = () => {
           <div className="row-container">
             <div className="social-group">
               <h3>Join Our Team</h3>
-              <input
-                style={{ textAlign: "center" }}
-                type="email"
-                placeholder="Enter your email"
-              />
+              <form>
+                <input type="email" placeholder="Enter your email" />
+                <FiMail className="mail-icon" />
+              </form>
               <br></br>
               <a>
                 <FiGithub className="social-icon" />
