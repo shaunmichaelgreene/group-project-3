@@ -26,7 +26,6 @@ import {
   GiRabbit,
   GiRaccoonHead,
 } from "react-icons/gi";
-
 const Search = (props) => {
   let navigate = useNavigate();
   let path = `/search-results`;
@@ -36,6 +35,7 @@ const Search = (props) => {
 
   const buttonSearch = async (searchTerm) => {
     console.log(searchTerm);
+    // const searchVariable = searchTerm;
     try {
       getPodcastsBySearchTerm(searchTerm) //api call with search term
         .then(function (response) {
@@ -46,6 +46,7 @@ const Search = (props) => {
                 "searchResult",
                 JSON.stringify(searchResult)
               );
+              localStorage.setItem("searchTerm", JSON.stringify(searchTerm));
               console.log(searchResult);
               navigate(path);
             });
@@ -136,6 +137,7 @@ const Search = (props) => {
 };
 
 export default Search;
+
 
 //CODE ARCHIVE - DO NOT DELETE
 //button search logic and JSX
