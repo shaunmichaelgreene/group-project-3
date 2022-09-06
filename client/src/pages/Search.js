@@ -33,6 +33,103 @@ import {
   GiRabbit,
   GiRaccoonHead,
 } from "react-icons/gi";
+
+localStorage.setItem(
+  "searchResult",
+  JSON.stringify({
+    data: {
+      podcasts: {
+        paginatorInfo: {
+          currentPage: 0,
+          hasMorePages: true,
+          lastPage: 3,
+        },
+        data: [
+          {
+            title: "Hamsters In Paradise",
+            imageUrl:
+              "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded/14144636/14144636-1642948795042-6a3a0446109e6.jpg",
+            numberOfEpisodes: 8,
+            id: "1836230",
+            url: "https://www.podchaser.com/podcasts/hamsters-in-paradise-1836230",
+          },
+          {
+            title: "The Hamsters",
+            imageUrl:
+              "https://d12xoj7p9moygp.cloudfront.net/images/default-podcast-image.png",
+            numberOfEpisodes: 1,
+            id: "2743477",
+            url: "https://www.podchaser.com/podcasts/the-hamsters-2743477",
+          },
+          {
+            title: "Creek Hamsters",
+            imageUrl:
+              "https://creekhamsters.files.wordpress.com/2015/03/creekhamsterscover-regular.jpg",
+            numberOfEpisodes: 8,
+            id: "186987",
+            url: "https://www.podchaser.com/podcasts/creek-hamsters-186987",
+          },
+          {
+            title: "Happy Hamsters",
+            imageUrl:
+              "https://i1.sndcdn.com/avatars-ylAHGsZKmwOsNTKV-ZjgX3Q-original.jpg",
+            numberOfEpisodes: 1,
+            id: "1152433",
+            url: "https://www.podchaser.com/podcasts/happy-hamsters-1152433",
+          },
+          {
+            title: "The HHL show | Hamsters Horses and Life",
+            imageUrl:
+              "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded/606773/606773-1553250347845-1047aaa9be78b.jpg",
+            numberOfEpisodes: 12,
+            id: "681250",
+            url: "https://www.podchaser.com/podcasts/the-hhl-show-hamsters-horses-a-681250",
+          },
+          {
+            title: "Naked Genetics, from the Naked Scientists",
+            imageUrl:
+              "https://www.thenakedscientists.com/sites/default/files/media/media/images/NS_Genetics_1400.png",
+            numberOfEpisodes: 97,
+            id: "17168",
+            url: "https://www.podchaser.com/podcasts/naked-genetics-from-the-naked-17168",
+          },
+          {
+            title: "The Exotic Pet Vet on Pet Life Radio (PetLifeRadio.com)",
+            imageUrl: "http://petliferadio.com/ExoticPetVet1400.jpg",
+            numberOfEpisodes: 2,
+            id: "226512",
+            url: "https://www.podchaser.com/podcasts/the-exotic-pet-vet-on-pet-life-226512",
+          },
+          {
+            title: "The Adviser Talk",
+            imageUrl:
+              "https://assets.pippa.io/shows/5ef2973a4809863ba4dc98f3/1636402744254-b4c95f289fda929b75d8a6923067448a.jpeg",
+            numberOfEpisodes: 127,
+            id: "2171534",
+            url: "https://www.podchaser.com/podcasts/the-adviser-talk-2171534",
+          },
+          {
+            title: "The Happy Hamster Corner",
+            imageUrl:
+              "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded_nologo/11094731/11094731-1607139136959-153b98216d0a7.jpg",
+            numberOfEpisodes: 85,
+            id: "3736871",
+            url: "https://www.podchaser.com/podcasts/the-happy-hamster-corner-3736871",
+          },
+          {
+            title: "The hamster care podcast!",
+            imageUrl:
+              "https://d3t3ozftmdmh3i.cloudfront.net/production/podcast_uploaded/7554993/7554993-1605657315983-22fd1ba6bcddf.jpg",
+            numberOfEpisodes: 3,
+            id: "2419263",
+            url: "https://www.podchaser.com/podcasts/the-hamster-care-podcast-2419263",
+          },
+        ],
+      },
+    },
+  })
+);
+
 const Search = (props) => {
   let navigate = useNavigate();
   let path = `/search-results`;
@@ -147,7 +244,6 @@ const Search = (props) => {
 };
 
 export default Search;
-
 
 //CODE ARCHIVE - DO NOT DELETE
 //button search logic and JSX
