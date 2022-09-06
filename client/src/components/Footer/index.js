@@ -48,7 +48,10 @@ const Footer = () => {
           <div className="row-container">
             <div className="social-group">
               <h3>Join Our Team</h3>
-              <input type="email" placeholder="Enter your email" />
+              <form>
+                <input type="email" placeholder="Enter your email" />
+                <FiMail className="mail-icon" />
+              </form>
               <br></br>
               <a>
                 <FiGithub className="social-icon" />
@@ -67,7 +70,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="logo-footer">
+        <div className="logo-footer" style={{ textAlign: "center" }}>
           <h2>
             Pawedcaster
             <GiSittingDog className="icon" />

@@ -32,6 +32,7 @@ const Podcast = ({ podcast }) => (
   </div>
 );
 const SearchResults = () => {
+  const loggedIn = Auth.loggedIn();
   // does not work - additional tweaking needed
   //   if (Auth.loggedIn) {
   //     alert('You must logged in to see this page. Please use the navigation links sign up or log in. Click OK to redirect')
@@ -51,13 +52,15 @@ const SearchResults = () => {
           Showing Results for {searchTerm}
         </h2> 
       </div>
+      {loggedIn && (
       <div className="results-container">
-          <div className="mapped-container">
-            {searchResult.map((podcast) => (
-              <Podcast key={podcast.id} podcast={podcast} />
-            ))}
-          </div>
+        <div className="mapped-container">
+          {searchResult.map((podcast) => (
+            <Podcast key={podcast.id} podcast={podcast} />
+          ))}
         </div>
+      </div>
+      )}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #0fB8e0;
+  --primary-color: #0fb8e0;
   --primary-dark: #0d2154;
 }
 
@@ -48,16 +48,17 @@
   font-size: 2rem;
 }
 
+
 .footer .col-container {
   display: grid;
-  grid-template-columns: 2fr 2fr 2fr ;
+  grid-template-columns: 2fr 2fr 2fr;
   padding: 1rem;
   width: 100%;
 }
 
 .footer .row-container {
-  display:inline;
-  grid-template-columns: 2fr 2fr 2fr ;
+  display: inline;
+  grid-template-columns: 2fr 2fr 2fr;
   padding: 1rem;
   width: 100%;
 }
