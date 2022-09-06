@@ -2,12 +2,16 @@ import React from "react";
 import { Navigate, useParams } from "react-router-dom";
 import Auth from "../utils/auth";
 import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
-// import { getPodcastsBySearchTerm } from "../utils/API";
+// import { searchVariable } from "./Search";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
+
 let searchResult = JSON.parse(localStorage.getItem("searchResult")).data
   .podcasts.data;
 console.log(searchResult);
+let searchTerm = JSON.parse(localStorage.getItem("searchTerm"));
+console.log(searchTerm);
+// document.body.style.backgroundImage = `../assets/${searchTerm}`;
 
 //podcast component
 const Podcast = ({ podcast }) => (
@@ -45,8 +49,8 @@ const SearchResults = () => {
     <div className="main">
       <div className="flex-row mb-3">
         <h2 className="bg-dark p-3 display-inline-block text-center results-heading">
-          SEARCH RESULTS
-        </h2>
+          Showing Results for {searchTerm}
+        </h2> 
       </div>
       {loggedIn && (
       <div className="results-container">
