@@ -24,9 +24,8 @@ const Profile = () => {
 
   if (!user?.username) {
     return (
-      <h4>
-        You need to be logged in to see this page. Use the navigation links
-        above to sign up or log in!
+      <h4 style={{ textAlign: "center", color: "red" }}>
+        You need to be logged in to see this page. Please sign up or log in!
       </h4>
     );
   }
