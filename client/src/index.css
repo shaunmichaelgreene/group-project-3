@@ -17,7 +17,7 @@
 }
 
 body {
-  background-image: url("assets/pexels-laura-the-explaura-3608263.jpg");
+  background-image: url("../src/assets/puppies.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: 10%;
@@ -177,6 +177,18 @@ button:hover {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.group-member {
+  /* border: solid black 3px; */
+  padding: 2%;
+  margin: 2%;
+  color: black;
+}
+
+.group-member:hover {
+  color:#1a5ccf;
+  text-decoration: underline;
 }
 
 /* FORM */
