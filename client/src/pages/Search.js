@@ -9,7 +9,14 @@ import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { BsBugFill } from "react-icons/bs";
-import { FaDragon, FaDog, FaCat, FaHorse, FaFrog } from "react-icons/fa";
+import {
+  FaDragon,
+  FaDog,
+  FaCat,
+  FaHorse,
+  FaFrog,
+  FaHome,
+} from "react-icons/fa";
 import {
   GiSpermWhale,
   GiSittingDog,
@@ -63,72 +70,75 @@ const Search = (props) => {
       <div className="search-form-container col-12 col-md-6">
         <div className="search-form card">
           <h4 className="card-header">Find your favorite pawed-casts here!</h4>
-          <div className="card-body">
-            <div className="search-btn-container">
-              <button
-                onClick={(e) => buttonSearchHandler(e.target.textContent)}
-              >
-                Dogs <GiSittingDog />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Cats <FaCat />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Whales <GiSpermWhale />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Horses <FaHorse />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dragons <FaDragon />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Raccoons <GiRaccoonHead />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dolphins <GiDolphin />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Birds <GiHummingbird />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Turtles <GiTurtle />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Dinosaurs <GiDinosaurRex />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Insects <BsBugFill />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Pigs <GiPig />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Sheep <GiSheep />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Puppies <FaDog />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Kittens <GiCat />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Squirrels <GiSquirrel />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Elephants <GiElephant />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Frogs <FaFrog />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Lions <GiLion />
-              </button>
-              <button onClick={(e) => buttonSearch(e.target.textContent)}>
-                Rabbits <GiRabbit />
-              </button>
+          {loggedIn && (
+            <div className="card-body">
+              <div className="search-btn-container">
+                <button
+                  onClick={(e) => buttonSearchHandler(e.target.textContent)}
+                >
+                  Dogs <GiSittingDog />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Cats <FaCat />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Whales <GiSpermWhale />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Horses <FaHorse />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Dragons <FaDragon />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Raccoons <GiRaccoonHead />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Dolphins <GiDolphin />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Birds <GiHummingbird />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Turtles <GiTurtle />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Dinosaurs <GiDinosaurRex />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Insects <BsBugFill />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Pigs <GiPig />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Sheep <GiSheep />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Puppies <FaDog />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Kittens <GiCat />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Squirrels <GiSquirrel />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Elephants <GiElephant />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Frogs <FaFrog />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Lions <GiLion />
+                </button>
+                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                  Rabbits <GiRabbit />
+                </button>
+              </div>
             </div>
-          </div>
+          )}
+          {/* {!loggedIn &&()} */}
         </div>
       </div>
     </main>
