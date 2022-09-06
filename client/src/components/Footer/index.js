@@ -1,6 +1,7 @@
 import React from "react";
 import { GiSittingDog } from "react-icons/gi";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { FaPaw } from "react-icons/fa";
 import {
   FiMail,
   FiFacebook,
@@ -15,7 +16,7 @@ import { Link } from "react-scroll";
 const Footer = () => {
   return (
     <div className="footer">
-      <div className="container">
+      <div className="container mw-90">
         <div className="top">
           <Link
             activeClass="active"
@@ -27,47 +28,36 @@ const Footer = () => {
             <BsFillArrowUpCircleFill className="icon" />
           </Link>
         </div>
-        <div className="col-container">
-          <div className="col">
+        <div className="row-container d-flex justify-content-between">
+          <div className="col-6">
             <h3>Our Story</h3>
             <p>
-              We are a group of software developers that love podcasts and
-              animals. We created this app for users that want a variety of
-              different choices when they search a specific topic. We hope you
+              We are a group of software developers with a passion for podcasts and
+              animals. We created this app for users that want to discover a wide variety of pet & animal related podcasts, while also being able to directly support our furry, scaly, and feathery friends. PawedCaster creatively monetizes user traffic and ad space to contribute the proceeds directly to local animal shelters, rescues, and ASPCA chapters.  We hope you
               find what you are looking for while exploring the possibilities.
             </p>
           </div>
-          <div className="col">
-            <h3> Our Mission </h3>
-            <p>
-              "To educate and entertain thought the power of information about
-              animals and all things for users to learn and have fun."
-            </p>
-          </div>
-
-          <div className="row-container">
-            <div className="social-group">
-              <h3>Join Our Team</h3>
-              <form>
-                <input type="email" placeholder="Enter your email" />
-                <FiMail className="mail-icon" />
-              </form>
-              <br></br>
-              <a>
-                <FiGithub className="social-icon" />
-                Shaun{" "}
-              </a>
-              <br></br>
-              <a>
-                <FiGithub className="social-icon" />
-                Alana{" "}
-              </a>
-              <br></br>
-              <a>
-                <FiGithub className="social-icon" />
-                Matt{" "}
-              </a>
-            </div>
+          <div className="social-group text-center col-6">
+            <h3>Join Our Team</h3>
+            <a className="group-member" target="_blank" href="https://github.com/shaunmichaelgreene">
+              <FiGithub className="social-icon" />
+              Shaun
+            </a>
+            <a className="group-member" target="_blank" href="https://github.com/alanam79">
+              <FiGithub className="social-icon" />
+              Alana
+            </a>
+            <a className="group-member" target="_blank" href="https://github.com/mattgaither">
+              <FiGithub className="social-icon" />
+              Matt
+            </a>
+            <br></br>
+            <a className="powered-by" target="_blank" href="https://www.podchaser.com/">Powered by Podchaser</a>
+            <br></br>
+            <p className="callout">Get Involed!</p>
+            <a className="powered-by" target="_blank" href="https://www.aspca.org/"><FaPaw /> Donate Now to the ASPCA <FaPaw /></a>
+            <br></br>
+            <a className="powered-by" target="_blank" href="https://www.worldwildlife.org/"><FaPaw/> Donate Now to the World Wildlife Federation <FaPaw /></a>
           </div>
         </div>
         <div className="logo-footer" style={{ textAlign: "center" }}>

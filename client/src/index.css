@@ -179,6 +179,18 @@ code {
     monospace;
 }
 
+.group-member {
+  /* border: solid black 3px; */
+  padding: 2%;
+  margin: 2%;
+  color: black;
+}
+
+.group-member:hover {
+  color:#1a5ccf;
+  text-decoration: underline;
+}
+
 /* FORM */
 .form-label,
 .form-input,

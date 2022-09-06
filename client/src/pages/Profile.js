@@ -34,7 +34,7 @@ const Profile = () => {
     <div>
       <div className="flex-row mb-3">
         <h2 className="bg-dark p-3 display-inline-block text-center results-heading">
-          Viewing {user.username}'s profile.
+          Hello {user.username}!
         </h2>
       </div>
 
