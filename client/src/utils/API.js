@@ -24,6 +24,7 @@ export const getPodcastsBySearchTerm = (searchTerm) => {
                         numberOfEpisodes,
                         id,
                         url,
+                        description
                 }
             }
         }`,

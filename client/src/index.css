@@ -17,7 +17,7 @@
 }
 
 body {
-  background-image: url("./components/Image/Photos/pexels-laura-the-explaura-3608263.jpg");
+  background-image: url("../src/assets/puppies.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -48,9 +48,11 @@ body {
 }
 
 .content img {
-  border: solid black 16px;
+  border: solid black 16px;  
+  /* above causes a border around "pawedcaster" */ 
   border-radius: 25px;
 }
+
 
 .logged-in a {
   padding: 0 10%;
@@ -63,7 +65,7 @@ body {
 
 /* relocate nav menu */
 .nav-menu {
-  margin-left: -25%;
+  margin-left: -8%;
 }
 
 .navbar .nav-menu {
@@ -75,14 +77,30 @@ body {
 .search-btn-container {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 ul {
   list-style-type: none;
 }
 
+.homepage-card {
+  text-align: center;
+  /* background: #fff; */
+}
+
 .podcast-card {
-  width: 18rem;
+  width: 25rem;
+  margin: 2%;
+}
+
+.podcast-card:hover {
+  border:rgb(228, 200, 44) solid 5px;
+  opacity: .8;
+}
+
+.results-heading {
+  color:rgb(228, 200, 44);
 }
 
 /* .podcast-img {
@@ -92,6 +110,13 @@ ul {
 .results-container {
   display: flex;
   justify-content: center;
+  margin-left: 10%;
+}
+
+.mapped-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card-body a {
@@ -152,6 +177,18 @@ button:hover {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.group-member {
+  /* border: solid black 3px; */
+  padding: 2%;
+  margin: 2%;
+  color: black;
+}
+
+.group-member:hover {
+  color:#1a5ccf;
+  text-decoration: underline;
 }
 
 /* FORM */
