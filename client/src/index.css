@@ -17,10 +17,10 @@
 }
 
 body {
-  background-image: url("assets/pexels-laura-the-explaura-3608263.jpg");
+  background-image: url("./components/Image/Photos/pexels-laura-the-explaura-3608263.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: 10%;
+  background-position: center;
   background-size: cover;
   margin: 0;
   padding: 0;
