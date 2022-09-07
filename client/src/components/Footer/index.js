@@ -54,7 +54,7 @@ const Footer = () => {
             <br></br>
             <a className="powered-by" target="_blank" href="https://www.podchaser.com/">Powered by Podchaser</a>
             <br></br>
-            <p className="callout">Get Involed!</p>
+            <p className="callout">Get Involved!</p>
             <a className="powered-by" target="_blank" href="https://www.aspca.org/"><FaPaw /> Donate Now to the ASPCA <FaPaw /></a>
             <br></br>
             <a className="powered-by" target="_blank" href="https://www.worldwildlife.org/"><FaPaw/> Donate Now to the World Wildlife Federation <FaPaw /></a>

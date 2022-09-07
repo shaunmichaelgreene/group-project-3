@@ -9,8 +9,10 @@ const hero = () => {
         <div className="content">
         <Link to="/">
             <img
-              src="https://see.fontimg.com/api/renderfont4/Yyj/eyJyIjoiZnMiLCJoIjoxMTQsInciOjEyNTAsImZzIjo5MSwiZmdjIjoiI0U4RTYyNCIsImJnYyI6IiMwNDA0MDQifQ/UGF3ZWQtQ2FzdGVy/catty.png"
+              src="https://see.fontimg.com/api/renderfont4/Yyj/eyJyIjoiZnMiLCJoIjo5MiwidyI6MTAwMCwiZnMiOjkyLCJmZ2MiOiIjMTkxOTE4IiwiYmdjIjoiI0Y3RjFGMSIsInQiOjF9/UGF3ZWRDYXN0ZXI/catty.png"
               alt="Paws fonts"
+              // https://see.fontimg.com/api/renderfont4/Yyj/eyJyIjoiZnMiLCJoIjoxMTQsInciOjEyNTAsImZzIjo5MSwiZmdjIjoiI0U4RTYyNCIsImJnYyI6IiMwNDA0MDQifQ/UGF3ZWQtQ2FzdGVy/catty.png
+              // https://see.fontimg.com/api/renderfont4/VGWjy/eyJyIjoiZnMiLCJoIjo5MiwidyI6MTAwMCwiZnMiOjkyLCJmZ2MiOiIjMTkxOTE4IiwiYmdjIjoiI0Y3RjFGMSIsInQiOjF9/UGF3ZWRDYXN0ZXI/meows.png
             ></img>
           </Link>
         </div>

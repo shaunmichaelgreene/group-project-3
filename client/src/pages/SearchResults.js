@@ -8,9 +8,9 @@ import { RiSdCardFill } from "react-icons/ri";
 
 let searchResult = JSON.parse(localStorage.getItem("searchResult")).data
   .podcasts.data;
-console.log(searchResult);
+// console.log(searchResult);
 let searchTerm = JSON.parse(localStorage.getItem("searchTerm"));
-console.log(searchTerm);
+// console.log(searchTerm);
 // document.body.style.backgroundImage = `../assets/${searchTerm}`;
 
 //podcast component
@@ -31,7 +31,17 @@ const Podcast = ({ podcast }) => (
     </div>
   </div>
 );
+
 const SearchResults = () => {
+
+    // useEffect(()=>{
+
+    // }, [propFromAPI])
+// const SearchResults = (propFromAPI) => {
+
+//     useEffect(()=>{
+
+//     }, [propFromAPI])
   const loggedIn = Auth.loggedIn();
   // does not work - additional tweaking needed
   //   if (Auth.loggedIn) {

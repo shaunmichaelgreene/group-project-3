@@ -5,14 +5,14 @@
 }
 
 .hero .container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* display: grid; */
+  /* grid-template-columns: repeat(2, 1fr); */
 }
 
 .hero .content {
   height: 30vh;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   text-align: left;
   padding: 1rem;

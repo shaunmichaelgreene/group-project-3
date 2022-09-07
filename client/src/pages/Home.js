@@ -13,6 +13,7 @@ const Home = () => {
       <div className="">
         <div className="homepage-card">
           <h2>Welcome!</h2>
+          <h3>Are you on the hunt for some great animal podcasts? Then paws what you're doing and search here! </h3>
           {/* below is making sure the search doesn't show unless logged in */}
           {loggedIn && (
             <div className="col-12 mb-3">

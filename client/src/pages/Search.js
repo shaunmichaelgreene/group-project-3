@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { SEARCH } from "../utils/queries";
 import Auth from "../utils/auth";
 import { savePodcastIds, getSavedPodcastIds } from "../utils/localStorage";
 import { getPodcastsBySearchTerm } from "../utils/API";
+import SearchResultsComp from "../components/SearchResultsComp";
 import PodcastCard from "../components/Cards/Cards";
 import { RiSdCardFill } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -39,8 +40,14 @@ const Search = (props) => {
   const loggedIn = Auth.loggedIn();
 
   //buttonSearch logic starts here
+  const [searchResult, setSearchResult] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("")
+  //  = async (searchTerm) => {
 
-  const buttonSearch = async (searchTerm) => {
+  useEffect(() => {
+    if (searchTerm == "") {
+      return;
+    }
     console.log(searchTerm);
     // const searchVariable = searchTerm;
     try {
@@ -48,21 +55,20 @@ const Search = (props) => {
         .then(function (response) {
           if (response.ok) {
             response.json().then(function (data) {
-              let searchResult = data; //if localStorage doesn't already contain the search result, add to local storage
-              localStorage.setItem(
-                "searchResult",
-                JSON.stringify(searchResult)
-              );
-              localStorage.setItem("searchTerm", JSON.stringify(searchTerm));
-              console.log(searchResult);
-              navigate(path);
+              console.log("data", data);
+              setSearchResult(data.data
+                .podcasts.data); 
+              console.log("searchResult", searchResult);
+
+              // setAnimals(searchResult)
+          
             });
           }
         });
     } catch (e) {
       console.error(e);
     }
-  };
+  }, [searchTerm]);
 
   //buttonSearch logic ends here
 
@@ -75,71 +81,76 @@ const Search = (props) => {
             <div className="card-body">
               <div className="search-btn-container">
                 <button
-                  onClick={(e) => buttonSearchHandler(e.target.textContent)}
+                  onClick={(e) => setSearchTerm(e.target.textContent)}
                 >
                   Dogs <GiSittingDog />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Cats <FaCat />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Whales <GiSpermWhale />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Horses <FaHorse />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Dragons <FaDragon />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Raccoons <GiRaccoonHead />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Dolphins <GiDolphin />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Birds <GiHummingbird />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Turtles <GiTurtle />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Dinosaurs <GiDinosaurRex />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Insects <BsBugFill />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Pigs <GiPig />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Sheep <GiSheep />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Puppies <FaDog />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Kittens <GiCat />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Squirrels <GiSquirrel />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Elephants <GiElephant />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Frogs <FaFrog />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Lions <GiLion />
                 </button>
-                <button onClick={(e) => buttonSearch(e.target.textContent)}>
+                <button onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Rabbits <GiRabbit />
                 </button>
               </div>
             </div>
           )}
-          {/* {!loggedIn &&()} */}
+          {!loggedIn && (
+            <div>You must be logged in to do that!</div>
+          )}
+          <div className="search-results-container">
+            <SearchResultsComp searchTerm={searchTerm} searchResult={searchResult}/>
+          </div>
         </div>
       </div>
     </main>
@@ -147,6 +158,11 @@ const Search = (props) => {
 };
 
 export default Search;
+
+// const [isClicked, setIsClicked] = useState(false)
+// when you click one of the serach buttons setIsClicked(true);
+
+// isClicked ? <SearchResults animals={animals}/> : null
 
 
 //CODE ARCHIVE - DO NOT DELETE
@@ -200,8 +216,7 @@ export default Search;
 // let savedPodcasts = JSON.parse(localStorage.getItem("searchResult"));
 // getLocalStorage();
 
-{
-}
+
 
 //original search form handler logic:
 // getPodcastsBySearchTerm(formState.searchInput) //api call with search term
