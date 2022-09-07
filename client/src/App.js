@@ -18,6 +18,7 @@ import NoMatch from "./pages/NoMatch";
 import Profile from "./pages/Profile";
 import Hero from "./components/Hero/hero";
 import SearchResults from "./pages/SearchResults";
+import GenerateImage from "./components/Image/Random"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -41,19 +42,22 @@ const client = new ApolloClient({
 //add conditional rendering to this return statement to trigger redirect to homepage if not logged in
 function App() {
   const [isOpen, setIsOpen] = useState(false);
+  
   return (
     <ApolloProvider client={client}>
-      <Router>
-        <Nav />
-        <Hero />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="*" element={<NoMatch />} />
-          <Route path="/search-results" element={<SearchResults />} />
-        </Routes>
+        <GenerateImage />
+        <Router>
+       
+          <Nav />
+          <Hero />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/search" element={<Search />} />
+            <Route path="*" element={<NoMatch />} />
+            <Route path="/search-results" element={<SearchResults />} />
+          </Routes>
 
         {/* <div>
           <button className={styles.primaryBtn} onClick={() => setIsOpen(true)}>
