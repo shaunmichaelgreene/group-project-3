@@ -1,49 +1,45 @@
 import React from "react";
-import { GiSittingDog } from "react-icons/gi";
-import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { Navigate, useParams } from "react-router-dom";
+import Auth from "../utils/auth";
+import { useQuery, useMutation } from "@apollo/client";
+import { QUERY_USER, QUERY_ME } from "../utils/queries";
 import { FaPaw } from "react-icons/fa";
 import {
   FiMail,
   FiGithub,
   FiLinkedin,
 } from "react-icons/fi";
-// import "./FooterStyles.css";
-import { Link } from "react-scroll";
 
-const Footer = () => {
+const Profile = () => {
+  // const { username: userParam } = useParams();
+
+  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+  //   variables: { username: userParam },
+  // });
+
+  // const user = data?.me || data?.user || {};
+
+  // // navigate to personal profile page if username is the logged-in user's
+  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  //   return <Navigate to="/profile" />;
+  // }
+
+  // if (loading) {
+  //   return <div>Loading...</div>;
+  // }
+
+  // if (!user?.username) {
+  //   return (
+  //     <h4 style={{ textAlign: "center", color: "red" }}>
+  //       You need to be logged in to see this page. Please sign up or log in!
+  //     </h4>
+  //   );
+  // }
+
   return (
-    
-    <div className="footer justify-content-center w-100">
-     <div className="d-flex">
-      <Link
-        activeClass="active"
-        to="top"
-        spy={true}
-        smooth={true}
-        duration={500}
-      >
-        <BsFillArrowUpCircleFill className="icon footer-icon" />
-      </Link>
-    <div className="logo-footer" style={{ textAlign: "center" }}>
-      <h2>
-        Pawedcaster
-        <GiSittingDog className="icon" />
-      </h2>
-      <h4>&copy;2022 A BlackHammerWhiteLightning Co.</h4>
-    </div>
-
-     </div>
-    </div>
-
-
-
-   
-);
-};
-    
-      {/* <div className="container mw-90">
+    <div className="container mw-90">
         
-        <div className="row-container d-flex justify-content-between">
+        <div className="row-container about d-flex justify-content-between">
           <div className="col-6">
             <h3>Our Story</h3>
             <p>
@@ -67,13 +63,32 @@ const Footer = () => {
               Matt
             </a>
             <br></br>
-            <a className="powered-by" target="_blank" href="https://www.podchaser.com/">Powered by Podchaser</a>
             <br></br>
+            <br></br>
+            
+            <a className="powered-by podchaser-link" target="_blank" href="https://www.podchaser.com/">Powered by Podchaser</a>
+            
             <p className="callout">Get Involved</p>
             <a className="powered-by" target="_blank" href="https://www.aspca.org/"><FaPaw /> Donate Now to the ASPCA <FaPaw /></a>
             <br></br>
             <a className="powered-by" target="_blank" href="https://www.worldwildlife.org/"><FaPaw/> Donate Now to the World Wildlife Federation <FaPaw /></a>
           </div>
-        </div> */}
+        </div>
+      </div>
+   
 
-export default Footer;
+    // <div>
+    //   <div className="flex-row mb-3">
+    //     <h2 className="bg-dark p-3 display-inline-block text-center results-heading">
+    //       Hello {user.username}!
+    //     </h2>
+    //   </div>
+
+    //   <div className="flex-row justify-space-between mb-3">
+    //     <div className="col-12 mb-3 col-lg-8"></div>
+    //   </div>
+    // </div>
+  );
+};
+
+export default Profile;

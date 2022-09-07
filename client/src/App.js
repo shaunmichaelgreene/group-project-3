@@ -15,7 +15,7 @@ import styles from "./App.module.css";
 import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
 import NoMatch from "./pages/NoMatch";
-// import Profile from "./pages/Profile";
+import About from "./pages/About";
 import Hero from "./components/Hero/hero";
 
 const httpLink = createHttpLink({
@@ -49,7 +49,7 @@ function App() {
           <Hero />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
             <Route path="/search" element={<Search />} />
             <Route path="*" element={<NoMatch />} />
