@@ -13,12 +13,12 @@ const Home = () => {
       <div className="">
         <div className="homepage-card">
           <h2>Welcome!</h2>
-          <h3>Are you on the hunt for some great animal podcasts? Then paws what you're doing and search here! </h3>
+          <h3>Are you on the hunt for some great animal podcasts? Then paws what you're doing and search here! Log in or sign up to start searching! When you search with PawedCaster, the animals win!</h3>
           {/* below is making sure the search doesn't show unless logged in */}
           {loggedIn && (
             <div className="col-12 mb-3">
               <Link to="/search">
-                <h2>Begin Search!</h2>
+                <h2 className="text-dark">Begin Search!</h2>
               </Link>
             </div>
           )}

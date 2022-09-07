@@ -15,10 +15,8 @@ import styles from "./App.module.css";
 import Modal from "./components/Modal/Modal.js";
 import Nav from "./components/Nav";
 import NoMatch from "./pages/NoMatch";
-import Profile from "./pages/Profile";
+// import Profile from "./pages/Profile";
 import Hero from "./components/Hero/hero";
-import SearchResults from "./pages/SearchResults";
-import GenerateImage from "./components/Image/Random"
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -45,18 +43,16 @@ function App() {
   
   return (
     <ApolloProvider client={client}>
-        <GenerateImage />
         <Router>
        
           <Nav />
           <Hero />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/profile" element={<Profile />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/login" element={<Login />} />
             <Route path="/search" element={<Search />} />
             <Route path="*" element={<NoMatch />} />
-            <Route path="/search-results" element={<SearchResults />} />
           </Routes>
 
         {/* <div>

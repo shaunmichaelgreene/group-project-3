@@ -4,11 +4,8 @@ import { BsFillArrowUpCircleFill } from "react-icons/bs";
 import { FaPaw } from "react-icons/fa";
 import {
   FiMail,
-  FiFacebook,
   FiGithub,
-  FiInstagram,
   FiLinkedin,
-  FiDribbble,
 } from "react-icons/fi";
 import "./FooterStyles.css";
 import { Link } from "react-scroll";
@@ -17,17 +14,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="container mw-90">
-        <div className="top">
-          <Link
-            activeClass="active"
-            to="top"
-            spy={true}
-            smooth={true}
-            duration={500}
-          >
-            <BsFillArrowUpCircleFill className="icon" />
-          </Link>
-        </div>
+        
         <div className="row-container d-flex justify-content-between">
           <div className="col-6">
             <h3>Our Story</h3>
@@ -38,7 +25,7 @@ const Footer = () => {
             </p>
           </div>
           <div className="social-group text-center col-6">
-            <h3>Join Our Team</h3>
+            <h3>Meet Our Team</h3>
             <a className="group-member" target="_blank" href="https://github.com/shaunmichaelgreene">
               <FiGithub className="social-icon" />
               Shaun
@@ -54,18 +41,29 @@ const Footer = () => {
             <br></br>
             <a className="powered-by" target="_blank" href="https://www.podchaser.com/">Powered by Podchaser</a>
             <br></br>
-            <p className="callout">Get Involved!</p>
+            <p className="callout">Get Involved</p>
             <a className="powered-by" target="_blank" href="https://www.aspca.org/"><FaPaw /> Donate Now to the ASPCA <FaPaw /></a>
             <br></br>
             <a className="powered-by" target="_blank" href="https://www.worldwildlife.org/"><FaPaw/> Donate Now to the World Wildlife Federation <FaPaw /></a>
           </div>
         </div>
+        <div className="top d-flex justify-content-center">
+          <Link
+            activeClass="active"
+            to="top"
+            spy={true}
+            smooth={true}
+            duration={500}
+          >
+            <BsFillArrowUpCircleFill className="icon" />
+          </Link>
         <div className="logo-footer" style={{ textAlign: "center" }}>
           <h2>
             Pawedcaster
             <GiSittingDog className="icon" />
           </h2>
           <h4>&copy;2022 A BlackHammerWhiteLightning Co.</h4>
+        </div>
         </div>
       </div>
     </div>

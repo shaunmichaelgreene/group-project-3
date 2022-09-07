@@ -69,21 +69,16 @@ export const savePodcast = (podcastData, token) => {
       "Content-Type": "application/json",
       authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(bookData),
+    body: JSON.stringify(podcastData),
   });
 };
 
-// remove saved book data for a logged in user
+// remove saved podcast data for a logged in user
 export const deletePodcast = (podcastId, token) => {
-  return fetch(`/api/users/books/${bookId}`, {
+  return fetch(`/api/users/books/${podcastId}`, {
     method: "DELETE",
     headers: {
       authorization: `Bearer ${token}`,
     },
   });
 };
-
-// make a search to google books api
-//   export const searchGoogleBooks = (query) => {
-//     return fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}`);
-//   };

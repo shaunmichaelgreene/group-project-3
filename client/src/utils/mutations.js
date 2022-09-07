@@ -59,7 +59,3 @@ export const REMOVE_PODCAST = gql`
   }
 `;
 
-// export const SEARCH = gql`
-// mutation search($search: String!) {
-//     search(search: $search)
-//  `;

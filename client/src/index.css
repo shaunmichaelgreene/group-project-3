@@ -16,6 +16,10 @@
   --dark: #1a5ccf;
 }
 
+main {
+  margin-bottom: 5%;
+}
+
 body {
   background-image: url("../src/assets/puppies.jpg");
   background-repeat: no-repeat;
@@ -36,10 +40,12 @@ body {
 .search-form-container {
   margin: 0 auto;
   padding-top: 5%;
+  text-align: center;
 }
 
 .search-form {
-  text-align: center;
+  margin: 0 auto;
+  margin-top: 10%;
 }
 
 .content a {
@@ -76,7 +82,7 @@ body {
 
 .search-btn-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
@@ -86,8 +92,15 @@ ul {
 
 .homepage-card {
   text-align: center;
+  opacity: 0.5;
+  background: white;
+  margin-top: 5%;
   /* background: #fff; */
 }
+
+/* .homepage-card h2 {
+  color:#1a5ccf;
+} */
 
 .podcast-card {
   width: 25rem;
@@ -110,18 +123,23 @@ ul {
 .results-container {
   display: flex;
   justify-content: center;
-  margin-left: 10%;
+  margin: 0 3%;
 }
 
 .mapped-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card-body a {
   margin: 0 auto;
 }
+
+/* .card-body {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+} */
 
 a {
   text-decoration: none;

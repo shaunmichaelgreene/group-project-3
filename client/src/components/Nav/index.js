@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { SiDatabricks } from "react-icons/si";
+// import { SiDatabricks } from "react-icons/si";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
@@ -18,9 +18,9 @@ const Nav = () => {
               <Link to="/">
                 <li>Home</li>
               </Link>
-              <Link to="/profile">
+              {/* <Link to="/profile">
                 <li>Profile</li>
-              </Link>
+              </Link> */}
               <Link to="/search">
                 <li>Search</li>
               </Link>
