@@ -19,7 +19,7 @@ const SearchResultsComp = (props) => {
                 <p className="card-text description">
                     About: {podcast.description}
                 </p>
-                <a href={podcast.url} className="btn btn-primary">
+                <a href={podcast.url} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
                     Check It Out On Podchaser!
                 </a>
                 

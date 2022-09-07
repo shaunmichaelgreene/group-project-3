@@ -127,7 +127,7 @@ const Search = (props) => {
                 onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Kittens <GiCat />
                 </button>
-                <button className="btn btn-primary" target="_blank"
+                <button className="btn btn-primary" target="_blank" 
                 onClick={(e) => setSearchTerm(e.target.textContent)}>
                   Squirrels <GiSquirrel />
                 </button>
